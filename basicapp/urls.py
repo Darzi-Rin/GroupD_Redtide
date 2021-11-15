@@ -1,0 +1,18 @@
+from django.urls import path
+from . import views
+
+app_name = 'basicapp'
+urlpatterns = [
+    path('', views.IndexView.as_view(), name="index"),
+    path('inquiry/', views.InquiryView.as_view(), name="inquiry"),
+    path('login/', views.LoginView.as_view(), name="login"),
+    path('logout/', views.LogoutView.as_view(), name="logout"),
+    path('p_poricy', views.PoricyView.as_view(), name="p_poricy"),
+    path('password_reset/', views.PasswordResetView.as_view(), name="password_reset"),
+    path('password_reset_complete/', views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
+    path('redtide_observe/', views.RedtideObserveView.as_view(), name="redtide_observe"),
+    path('redtide_prediction/', views.RedtidePredictionView.as_view(), name="redtide_prediction"),
+    path('redtide_report/', views.RedtideReportView.as_view(), name="redtide_report"),
+    path('redtide_share/', views.RedtideShareView.as_view(), name="redtide_share"),
+    path('sign_up/', views.SignUpView.as_view(), name="sign_up"),
+]
