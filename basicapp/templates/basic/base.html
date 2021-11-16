@@ -6,7 +6,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" rel="stylesheet">
-    <title>赤潮観測トップページ</title>
+    <link rel="stylesheet" href="{% static 'css/hamburger.css' %}">
+    <title>{% block title %}{% endblock %}</title>
     {% block head %}{% endblock %}
 </head>
+<!-- ハンバーガーメニュー -->
+<script type="text/javascript" src="{% static 'js/redtide.js' %}"></script>
+<div id="nav-wrapper" class="nav-wrapper">
+    <div class="hamburger" id="js-hamburger">
+        <span class="hamburger__line hamburger__line--1"></span>
+        <span class="hamburger__line hamburger__line--2"></span>
+        <span class="hamburger__line hamburger__line--3"></span>
+    </div>
+    <nav class="sp-nav">
+    <ul>
+        <p>メニュー</p>
+        <li><a href="{% url 'basicapp:index' %}">トップページへ</a></li>
+        <li><a href="{% url 'basicapp:sign_up' %}">会員登録</a></li>
+        <li><a href="{% url 'basicapp:login' %}">ログイン</a></li>
+        <li><a href="{% url 'basicapp:inquiry' %}">お問い合わせ</a></li>
+        <li><a href="{% url 'basicapp:p_poricy' %}">プライバシーポリシー</a></li>
+    </ul>
+    </nav>
+    <div class="black-bg" id="js-black-bg"></div>
+</div>
+
+<!-- header section -->
+{% block header  %}{% endblock %}
+
+<!-- Content section 1-->
+{% block contents  %}{% endblock %}
+
+<!-- Content section 2-->
+{% block contents2  %}{% endblock %}
+
+<!-- Content section 3-->
+{% block contents3  %}{% endblock %}

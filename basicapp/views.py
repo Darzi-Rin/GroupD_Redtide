@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import logging
 from django.views import generic
+from django.urls import reverse_lazy
 
 # Create your views here.
 logger = logging.getLogger(__name__)
@@ -8,6 +9,7 @@ logger = logging.getLogger(__name__)
 
 class IndexView(generic.TemplateView):
     template_name = "basic/index.html"
+    success_url = reverse_lazy('basicapp:index')
 
 class InquiryView(generic.TemplateView):
     template_name = "basic/inquiry.html"

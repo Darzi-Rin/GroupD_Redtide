@@ -1,43 +1,31 @@
 {% extends 'basic/base.html' %}
 
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/index.css">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {% block title %}
+    赤潮共有
+    {% endblock %}
 </head>
+
+{% block contents %}
+
 <body>
-
-<header>
-
-  <div class="menu">
-    <ul>
-      <li><a href="index.html">トップページへ戻る</a></li>
-    </ul>
-  </div>
-  
-  <script type="text/javascript" src="js/red-tide.js"></script>
-  <div id="nav-wrapper" class="nav-wrapper">
-    <div class="hamburger" id="js-hamburger">
-          <span class="hamburger__line hamburger__line--1"></span>
-          <span class="hamburger__line hamburger__line--2"></span>
-          <span class="hamburger__line hamburger__line--3"></span>
+    <header>
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'basicapp:index' %}">トップページへ戻る</a></li>
+            </ul>
         </div>
-        <nav class="sp-nav">
-          <ul>
-            <li><a href="index.html">トップページへ</a></li>
-            <li><a href="sign_up.html">会員登録</a></li>
-            <li><a href="login.html">ログイン</a></li>
-            <li><a href="inquiry.html">お問い合わせ</a></li>
-            <li><a href="p_poricy.html">プライバシーポリシー</a></li>
-          </ul>
-        </nav>
-        <div class="black-bg" id="js-black-bg"></div>
-      </div>
-
     </header>
 </body>
 </html>
+
+{% endblock %}

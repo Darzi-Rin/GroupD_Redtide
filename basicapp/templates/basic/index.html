@@ -1,55 +1,47 @@
+{% extends 'basic/base.html' %}
 
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}" rel="stylesheet">
-  <title>赤潮観測トップページ</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block title %}
+    赤潮観測トップページ
+    {% endblock %}
 </head>
+
 <body>
-  <header>
-    <!-- タイトルと会員登録とログイン -->
-    <div class="toppage">
-      <h1>トップページ</h1>
-    </div>
-    <div class="account">
-      <a href="sign_up.html">会員登録</a>
-      <a href="login.html">ログイン</a>
-    </div>
-    <!-- ハンバーガーメニュー -->
-      <script type="text/javascript" src="js/red-tide.js"></script>
-      <div id="nav-wrapper" class="nav-wrapper">
-        <div class="hamburger" id="js-hamburger">
-              <span class="hamburger__line hamburger__line--1"></span>
-              <span class="hamburger__line hamburger__line--2"></span>
-              <span class="hamburger__line hamburger__line--3"></span>
-            </div>
-            <nav class="sp-nav">
-              <ul>
-                <p>メニュー</p>
-                <li><a href="index.html">トップページへ</a></li>
-                <li><a href="sign_up.html">会員登録</a></li>
-                <li><a href="login.html">ログイン</a></li>
-                <li><a href="inquiry.html">お問い合わせ</a></li>
-                <li><a href="p_poricy.html">プライバシーポリシー</a></li>
-              </ul>
-            </nav>
-            <div class="black-bg" id="js-black-bg"></div>
-      </div>
-  </header>
-  <h3>※現在の赤潮の状況</h3>
-  <h3>※ここに赤潮の画像を表示する</h3>
+    {% block header %}
+    <header>
+        <!-- タイトルと会員登録とログイン -->
+        <div class="toppage">
+            <h1>トップページ</h1>
+        </div>
+        <div class="account">
+            <a href="{% url 'basicapp:sign_up' %}">会員登録</a>
+            <a href="{% url 'basicapp:login' %}">ログイン</a>
+        </div>
+    </header>
+    {% endblock %}
+
+    {% block contents %}
+    <h3>※現在の赤潮の状況</h3>
+    <h3>※ここに赤潮の画像を表示する</h3>
 
     <div class="red-tide">
-      <ul>
-        <li><a href="redtide_prediction.html" class="button">赤潮の予報を見る</a></li>
-        <li><a href="redtide_share.html" class="button">赤潮の情報を共有する</a></li>
-        <li><a href="redtide_observe.html" class="button">赤潮の観測を見る</a></li>
-      </ul>
+        <ul>
+            <li><a href="{% url 'basicapp:redtide_prediction' %}" class="button">赤潮の予報を見る</a></li>
+            <li><a href="{% url 'basicapp:redtide_share' %}" class="button">赤潮の情報を共有する</a></li>
+            <li><a href="{% url 'basicapp:redtide_observe' %}" class="button">赤潮の観測を見る</a></li>
+        </ul>
     </div>
 </body>
+
 </html>
+
+{% endblock %}

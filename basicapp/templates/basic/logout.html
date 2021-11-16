@@ -1,48 +1,34 @@
 {% extends 'basic/base.html' %}
 
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/logout.css">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+    {% block title %}
+    ログアウトページ
+    {% endblock %}
 </head>
+
+{% block contents %}
+
 <body>
+    <!-- <div class=container> -->
+    <h1>ログアウトしますか？</h1>
+    <!-- </div> -->
 
-<header>
-
-  <script type="text/javascript" src="js/red-tide.js"></script>
-  <div id="nav-wrapper" class="nav-wrapper">
-    <div class="hamburger" id="js-hamburger">
-          <span class="hamburger__line hamburger__line--1"></span>
-          <span class="hamburger__line hamburger__line--2"></span>
-          <span class="hamburger__line hamburger__line--3"></span>
+    <a href="index.html">
+        <div class="yn">
+            <button type="button">はい</button>
+            <button type="button">いいえ</button>
         </div>
-        <nav class="sp-nav">
-          <ul>
-            <li><a href="index.html">トップページへ</a></li>
-            <li><a href="sign_up.html">会員登録</a></li>
-            <li><a href="login.html">ログイン</a></li>
-            <li><a href="inquiry.html">お問い合わせ</a></li>
-            <li><a href="p_poricy.html">プライバシーポリシー</a></li>
-          </ul>
-        </nav>
-        <div class="black-bg" id="js-black-bg"></div>
-  </div>
-
-</header>
-
-<!-- <div class=container> -->
-  <h1>ログアウトしますか？</h1>
-<!-- </div> -->
-
-<a href="index.html">
-  <div class="yn">
-      <button type="button">はい</button>
-      <button type="button">いいえ</button>
-    </div>
-  </a>
+    </a>
 </body>
 </html>
+
+{% endblock %}

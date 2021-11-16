@@ -1,45 +1,32 @@
 {% extends 'basic/base.html' %}
 
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/inquiry.css">
-    <title></title>
-  </head>
-  
-  <body>
-  <header>    
+    <link rel="stylesheet" href="{% static 'css/inquiry.css' %}">
+    {% block title %}
+    お問い合わせページ
+    {% endblock %}
+</head>
 
-    
-    <script type="text/javascript" src="js/red-tide.js"></script>
+{% block contents %}
 
-    <div id="nav-wrapper" class="nav-wrapper">
-      <div class="hamburger" id="js-hamburger">
-        <span class="hamburger__line hamburger__line--1"></span>
-        <span class="hamburger__line hamburger__line--2"></span>
-        <span class="hamburger__line hamburger__line--3"></span>
-      </div>
-      <nav class="sp-nav">
-        <ul>
-          <li><a href="index.html">トップページへ</a></li>
-          <li><a href="sign_up.html">会員登録</a></li>
-          <li><a href="login.html">ログイン</a></li>
-          <li><a href="inquiry.html">お問い合わせ</a></li>
-          <li><a href="p_poricy.html">プライバシーポリシー</a></li>
-        </ul>
-      </nav>
-      <div class="black-bg" id="js-black-bg"></div>
+<body>
+    <div class="inquiry">
+        <h1>お問い合わせ</h1>
     </div>
-
-  </header>
-  <div class="inquiry"><h1>お問い合わせ</h1></div>
     <form action="index.html" method="get">
-      <!-- <textarea name="comment" cols="40" rows="9" maxlength="180"></textarea> -->
-      <textarea name="comment" maxlength="180" class="inquiry-form"></textarea>
-      <input type="submit" class="send" value="送信する">
+        <!-- <textarea name="comment" cols="40" rows="9" maxlength="180"></textarea> -->
+        <textarea name="comment" maxlength="180" class="inquiry-form"></textarea>
+        <input type="submit" class="send" value="送信する">
     </form>
-  </body>
-  </html>
+</body>
+</html>
+
+{% endblock %}

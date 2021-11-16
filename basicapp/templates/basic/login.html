@@ -1,75 +1,63 @@
 {% extends 'basic/base.html' %}
 
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css\login.css">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css\login.css' %}">
+    {% block title %}
+    ログインページ
+    {% endblock %}
 </head>
 
+{% block contents %}
 
 <body>
-<header>
-<div>
-  <script type="text/javascript" src="js/red-tide.js"></script>
-  <div id="nav-wrapper" class="nav-wrapper">
-    <div class="hamburger" id="js-hamburger">
-          <span class="hamburger__line hamburger__line--1"></span>
-          <span class="hamburger__line hamburger__line--2"></span>
-          <span class="hamburger__line hamburger__line--3"></span>
-        </div>
-        <nav class="sp-nav">
-          <ul>
-            <li><a href="index.html">トップページへ</a></li>
-            <li><a href="sign_up.html">会員登録</a></li>
-            <li><a href="login.html">ログイン</a></li>
-            <li><a href="inquiry.html">お問い合わせ</a></li>
-            <li><a href="p_poricy.html">プライバシーポリシー</a></li>
-          </ul>
-        </nav>
-        <div class="black-bg" id="js-black-bg"></div>
-  </div>
-</header>
+    <div class="title">
+        <h1>ログイン</h1>
+    </div>
 
-  <div class="title"><h1>ログイン</h1></div>
+    <div class="" align="center">
+        <table border="0">
+            <form action="index.html" method="get">
 
-  <div class="" align="center">
-    <table border="0">
-        <form action="index.html" method="get">
+                <!-- <div class="adress_pass"> -->
+                <tr>
+                    <td>
+                        <!-- <input type="text" name="user_id" class="adress_pass" placeholder="メールアドレス入力欄"> -->
+                        <input type="text" name="user_id" class="adress_pass" placeholder="メールアドレス入力欄" size="50">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!-- <input type="password" name="password" class="adress_pass" placeholder="パスワード(8文字以上半角英数字のみ)"> -->
+                        <input type="password" name="password" class="adress_pass" placeholder="パスワード(8文字以上半角英数字のみ)"
+                            size="50">
+                    </td>
+                </tr>
+                <!-- </div> -->
 
-            <!-- <div class="adress_pass"> -->
-              <tr>
-                  <td>
-                    <!-- <input type="text" name="user_id" class="adress_pass" placeholder="メールアドレス入力欄"> -->
-                    <input type="text" name="user_id" class="adress_pass" placeholder="メールアドレス入力欄" size="50">
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                    <!-- <input type="password" name="password" class="adress_pass" placeholder="パスワード(8文字以上半角英数字のみ)"> -->
-                    <input type="password" name="password" class="adress_pass" placeholder="パスワード(8文字以上半角英数字のみ)" size="50">
-                  </td>
-              </tr>
-            <!-- </div> -->
-            
-            <tr>
-              <td>
-                <div class="forgot">
-                  パスワードを忘れた方はこちら
-                </div>
-              </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="submit" value="ログイン" class="login_button">
-                </td>
-            </tr>
-        </form>
-    </table>
-  </div>
-
+                <tr>
+                    <td>
+                        <div class="forgot">
+                            パスワードを忘れた方はこちら
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="ログイン" class="login_button">
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </div>
 </body>
 </html>
+
+{% endblock %}
