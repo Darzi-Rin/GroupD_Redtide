@@ -1,0 +1,53 @@
+{% extends 'basic/base.html' %}
+
+{% block contents %}
+<div class="subtitle" style="text-align: center;">
+    <h1 style="margin-top: 300px;">共有されている赤潮情報</h1>
+</div>
+<div>
+    {% for basic in share_list %}
+    <div style="text-align: center;">
+        <h3>登録日時{{ basic.created_at }}</h3>
+        <a href="{% url 'basicapp:share_detail' basic.pk %}">
+            <h3>
+                {{ basic.day }}
+            </h3>
+        </a>
+    </div>
+    {% empty %}
+    <p style="text-align: center;">赤潮情報がありません。</p>
+    {% endfor %}
+    <!--ページネーション処理-->
+    {% if is_paginated %}
+    <ul style="text-align: center;">
+        <!--前ページへのリンク-->
+        {% if page_obj.has_previous %}
+        <li style="list-style: none;">
+            <a href="?page={{ page_obj.previous_page_number }}">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        {% endif %}
+        <!--ページ数表示-->
+        <!-- {% for page_num in page_obj.paginator.page_range %}
+        {% if page_obj.number == page_num %}
+        <li><a class="page-link" href="#">{{ page_num }}</a></li>
+        {% else %}
+        <li><a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a></li>
+        {% endif %}
+        {% endfor %} -->
+        <!--次ページへのリンク-->
+        {% if page_obj.has_next %}
+        <li style="list-style: none;">
+            <a href="?page={{ page_obj.next_page_number }}">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+    {% endif %}
+    <div style="text-align: center;">
+        <a href="{% url 'basicapp:redtide_report' %}">赤潮報告画面に戻る</a>
+    </div>
+</div>
+{% endblock %}

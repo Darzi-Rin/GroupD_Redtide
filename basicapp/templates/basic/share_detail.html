@@ -1,0 +1,31 @@
+{% extends 'basic/base.html' %}
+
+{% block contents %}
+<div style="text-align: center;">
+    <div style="margin-top: 300px;">
+        <div>
+            <div>
+                <strong>作成日時</strong>
+            </div>
+            <div>
+                {{ object.created_at }}
+            </div>
+        </div>
+        <div>
+            <strong>エリア</strong>
+        </div>
+        <div>
+            {{ object.day }}
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>詳細な情報</p>
+        </div>
+        <div>
+            {{ object.content|linebreaksbr }}
+        </div>
+    </div>
+    <a href="{% url 'basicapp:share_delete' object.pk %}">削除</a>
+</div>
+{% endblock %}

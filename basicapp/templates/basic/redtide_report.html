@@ -17,29 +17,21 @@
 
 {% block contents %}
 
-<body>
-    <h1>赤潮報告</h1>
+<body style="margin-top: 250px;">
+    <h1 style="text-align: center;">赤潮報告</h1>
     <div align="center">
         <table border="0">
-            <form action="{% url 'basicapp:share_mail' %}" method="post">
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <tr>
-                    <td>
-                        <input type="date" name="date" id="date">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="{% url 'basicapp:share_place' %}">エリア選択</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" value="報告する" class="button">
-                    </td>
-                </tr>
+                <table>
+                    {{ form.as_table }}
+                </table>
+                <button type="submit">作成</button>
             </form>
         </table>
+        <div style="margin-top: 60px;">
+            <a href="{% url 'basicapp:share_list' %}">現在共有されている赤潮を見に行く</a>
+        </div>
     </div>
 </body>
 </html>

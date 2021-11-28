@@ -1,3 +1,33 @@
+from django.contrib.auth.models import User
+# from accounts.models import CustomUser
 from django.db import models
 
-# Create your models here.
+# class PlaceChoices(models.TextChoices):
+#     KISUIDOU = 'kisuidou', '紀伊水道'
+#     OSAKAWAN = 'osakawan', '大阪湾'
+#     HARIMANADA = 'harimanada', '播磨灘'
+#     BISANSETO = 'bisanseto', '備讃瀬戸'
+#     BINGONADA = 'bingonada', '備後灘'
+#     HIUCHINADA = 'hiuchinada', '燧灘'
+#     AKINADA = 'akinada', '安芸灘'
+#     HIROSHIMAWAN = 'hiroshimawan', '広島湾'
+#     IYONADA = 'iyonada', '伊予灘'
+#     SUOUNADA = 'suounada', '周防灘'
+#     HIBIKINADA = 'hibikinada', '響灘'
+#     BUNGOSUIDOU = 'bungosuidou', '豊後水道'
+
+class Share(models.Model):
+    """"赤潮観測モデル"""
+
+    # user = models.ForeignKey(CustomUser, verbose_name='ユーザー', on_delete=models.PROTECT)
+    day = models.CharField(verbose_name='エリア', max_length=40)
+    # content = forms.fields.ChoiceField(choices=PlaceChoices.choices, required=True, label='エリア選択')
+    content = models.TextField(verbose_name='詳細な情報', blank=True, null=True, max_length=20)
+    created_at = models.DateTimeField(verbose_name='作成日時', auto_now_add=True)
+    updated_at = models.DateTimeField(verbose_name='更新日時', auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Share'
+    
+    def __str__(self):
+        return self.day
