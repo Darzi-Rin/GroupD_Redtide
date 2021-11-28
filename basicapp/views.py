@@ -38,8 +38,11 @@ class RedtidePredictionView(generic.TemplateView):
 class RedtideReportView(generic.TemplateView):
     template_name = "basic/redtide_report.html"
 
-class RedtideShareView(generic.TemplateView):
-    template_name = "basic/redtide_share.html"
+class SharePlaceView(generic.TemplateView):
+    template_name = "basic/share_place.html"
+
+class ShareMailView(generic.TemplateView):
+    template_name = "basic/share_mail.html"
 
 class SignUpView(generic.TemplateView):
     template_name = "basic/sign_up.html"

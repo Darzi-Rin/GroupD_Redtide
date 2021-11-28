@@ -1,0 +1,31 @@
+{% extends 'basic/base.html' %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {% block title %}
+    共有完了画面
+    {% endblock %}
+</head>
+
+{% block contents %}
+
+<body>
+    <div class="complete">
+        <h3>報告情報が共有されました</h3>
+    </div>
+    <div class="link">
+        <a href="{% url 'basicapp:redtide_report' %}">赤潮報告画面へ戻る</a>
+        <a href="{% url 'basicapp:index' %}">トップページへ戻る</a>
+    </div>
+</body>
+</html>
+
+{% endblock %}

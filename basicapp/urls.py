@@ -13,6 +13,7 @@ urlpatterns = [
     path('redtide_observe/', views.RedtideObserveView.as_view(), name="redtide_observe"),
     path('redtide_prediction/', views.RedtidePredictionView.as_view(), name="redtide_prediction"),
     path('redtide_report/', views.RedtideReportView.as_view(), name="redtide_report"),
-    path('redtide_share/', views.RedtideShareView.as_view(), name="redtide_share"),
+    path('share_place/', views.SharePlaceView.as_view(), name="share_place"),
+    path('share_mail/', views.ShareMailView.as_view(), name="share_mail"),
     path('sign_up/', views.SignUpView.as_view(), name="sign_up"),
 ]

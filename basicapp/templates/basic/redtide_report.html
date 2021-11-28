@@ -21,15 +21,16 @@
     <h1>赤潮報告</h1>
     <div align="center">
         <table border="0">
-            <form action="index.html" method="get">
+            <form action="{% url 'basicapp:share_mail' %}" method="post">
+                {% csrf_token %}
                 <tr>
                     <td>
-                        <input type="text" name="user_id" value="" size="24">
+                        <input type="date" name="date" id="date">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="password" name="password" value="" size="24">
+                        <a href="{% url 'basicapp:share_place' %}">エリア選択</a>
                     </td>
                 </tr>
                 <tr>
