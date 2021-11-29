@@ -2,11 +2,13 @@
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/hamburger.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <title>{% block title %}{% endblock %}</title>
     {% block head %}{% endblock %}
 </head>
@@ -19,29 +21,29 @@
         <span class="hamburger__line hamburger__line--3"></span>
     </div>
     <nav class="sp-nav">
-    <ul>
-        <p>メニュー</p>
-        <li><a href="{% url 'basicapp:index' %}">トップページへ</a></li>
-        <li><a href="{% url 'basicapp:sign_up' %}">会員登録</a></li>
-        <li><a href="{% url 'basicapp:login' %}">ログイン</a></li>
-        <li><a href="{% url 'basicapp:inquiry' %}">お問い合わせ</a></li>
-        <li><a href="{% url 'basicapp:p_poricy' %}">プライバシーポリシー</a></li>
-    </ul>
+        <ul class="menu-list">
+            <p>メニュー</p>
+            <li><a href="{% url 'basicapp:index' %}" class="menu menu--orange">トップページへ</a></li>
+            <li><a href="{% url 'basicapp:sign_up' %}" class="menu menu--orange">会員登録</a></li>
+            <li><a href="{% url 'basicapp:login' %}" class="menu menu--orange">ログイン</a></li>
+            <li><a href="{% url 'basicapp:inquiry' %}" class="menu menu--orange">お問い合わせ</a></li>
+            <li><a href="{% url 'basicapp:p_poricy' %}" class="menu menu--orange">プライバシーポリシー</a></li>
+        </ul>
     </nav>
     <div class="black-bg" id="js-black-bg"></div>
 </div>
 
 <!-- header section -->
-{% block header  %}{% endblock %}
+{% block header %}{% endblock %}
 
 <!-- Content section 1-->
-{% block contents  %}{% endblock %}
+{% block contents %}{% endblock %}
 
 <!-- Content section 2-->
-{% block contents2  %}{% endblock %}
+{% block contents2 %}{% endblock %}
 
 <!-- Content section 3-->
-{% block contents3  %}{% endblock %}
+{% block contents3 %}{% endblock %}
 
 <!-- footer section -->
-{% block footer  %}{% endblock %}
+{% block footer %}{% endblock %}

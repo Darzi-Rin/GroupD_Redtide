@@ -14,7 +14,7 @@ humburger(ハンバーガーアイコン)
   
   .hamburger__line {
     position: absolute;
-    width: 50px;
+    width: 42px;
     height: 3px;
     right: 0;
     background-color: #000;
@@ -26,11 +26,11 @@ humburger(ハンバーガーアイコン)
   }
   
   .hamburger__line--2 {
-    top: 18px;
+    top: 16px;
   }
   
   .hamburger__line--3 {
-    top: 36px;
+    top: 32px;
   }
   
   /*ハンバーガーがクリックされたら*/
@@ -55,7 +55,7 @@ humburger(ハンバーガーアイコン)
     position: fixed;
     right: -100%; /*ハンバーガーがクリックされる前はWindow右側に隠す*/
     top: 0;
-    width: 70%; /* 出てくるスライドメニューの幅 */
+    width: 30%; /* 出てくるスライドメニューの幅 */
     height: 100vh;
     background-color: #fff;
     transition: all 0.5s;
@@ -87,8 +87,53 @@ humburger(ハンバーガーアイコン)
     z-index: 100;
   }
   
-  /*ハンバーガーメニューが開いたら表示*/
-  .open .black-bg {
-    opacity: 0.3;
-    visibility: visible;
-  }
+/*ハンバーガーメニューが開いたら表示*/
+.open .black-bg {
+  opacity: 0.3;
+  visibility: visible;
+}
+
+/* メニュー一覧の'・'を非表示 */
+li {
+  list-style: none;
+}
+
+ul.menu-list li {
+  margin-bottom: 10px;
+}
+
+/* メニューボタンの装飾 */
+.menu,
+a.menu,
+button.menu {
+
+  font-weight: 100;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 2px 4px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.menu--orange,
+a.menu--orange {
+  color: #fff;
+  background-color: #eb6100;
+}
+.menu--orange:hover,
+a.menu--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
