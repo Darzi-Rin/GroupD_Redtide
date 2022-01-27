@@ -6,6 +6,8 @@ class Share(models.Model):
     """"赤潮観測モデル"""
 
     # user = models.ForeignKey(CustomUser, verbose_name='ユーザー', on_delete=models.PROTECT)
+    
+    #ドロップダウンリストに変更↓
     day = models.CharField(verbose_name='エリア', max_length=40)
     # content = forms.fields.ChoiceField(choices=PlaceChoices.choices, required=True, label='エリア選択')
     content = models.TextField(verbose_name='詳細な情報', blank=True, null=True, max_length=20)
