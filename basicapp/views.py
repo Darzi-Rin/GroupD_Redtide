@@ -3,6 +3,8 @@ import logging
 from django.views import generic
 from django.urls import reverse_lazy
 
+from basicapp.observation_AI import hantei
+
 # Create your views here.
 logger = logging.getLogger(__name__)
 
@@ -31,6 +33,8 @@ class PasswordResetCompleteView(generic.TemplateView):
 
 class RedtideObserveView(generic.TemplateView):
     template_name = "basic/redtide_observe.html"
+    def a_page(request):
+        return hantei(request)
 
 class RedtidePredictionView(generic.TemplateView):
     template_name = "basic/redtide_prediction.html"
