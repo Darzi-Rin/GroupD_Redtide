@@ -7,6 +7,8 @@ from django.contrib import messages
 from .models import Share
 from .forms import CreateForm
 
+from basicapp.observation_AI import hantei
+
 # Create your views here.
 logger = logging.getLogger(__name__)
 
@@ -34,7 +36,10 @@ class PasswordResetCompleteView(generic.TemplateView):
     template_name = "basic/password_reset_complete.html"
 
 class RedtideObserveView(generic.TemplateView):
-    template_name = "basic/redtide_observe.html"
+        template_name = "basic/redtide_observe.html"
+
+def ans(request):
+        return hantei(request)
 
 class RedtidePredictionView(generic.TemplateView):
     template_name = "basic/redtide_prediction.html"
