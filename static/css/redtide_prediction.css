@@ -2,6 +2,32 @@
   position: fixed;
 }
 
+/* ログインボタン */
+.login,
+a.login,
+button.login {
+  /* font-size: 1.6rem; */
+  font-weight: 100;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 2px 4px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+
 /* .hamburger {
   position: fixed;
 } */

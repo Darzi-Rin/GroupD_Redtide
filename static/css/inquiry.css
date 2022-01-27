@@ -29,6 +29,6 @@ input.send {
   color         : #000000;     /* 文字色     */
   line-height   : 1em;         /* 1行の高さ  */
   opacity       : 1;           /* 透明度     */
-  transition    : .3s;         /* なめらか変化 */
+  transition    : 0.3s;         /* なめらか変化 */
 }
 

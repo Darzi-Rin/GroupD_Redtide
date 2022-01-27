@@ -55,7 +55,7 @@ humburger(ハンバーガーアイコン)
     position: fixed;
     right: -100%; /*ハンバーガーがクリックされる前はWindow右側に隠す*/
     top: 0;
-    width: 30%; /* 出てくるスライドメニューの幅 */
+    width: 350px; /* 出てくるスライドメニューの幅 */
     height: 100vh;
     background-color: #fff;
     transition: all 0.5s;
@@ -129,11 +129,13 @@ button.menu {
 
 .menu--orange,
 a.menu--orange {
-  color: #fff;
-  background-color: #eb6100;
+  color: black;
+  /* color: #fff; */
+  /* background-color: #eb6100; */
 }
 .menu--orange:hover,
 a.menu--orange:hover {
-  color: #fff;
-  background: #f56500;
+  color: black;
+  /* color: #fff; */
+  /* background: #f56500; */
 }

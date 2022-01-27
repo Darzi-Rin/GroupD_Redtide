@@ -99,14 +99,16 @@ button.btn {
 
 .btn--orange,
 a.btn--orange {
-  color: #fff;
-  background-color: #eb6100;
+  color: black;
+  /* color: #fff; */
+  /* background-color: #eb6100; */
 }
 
 .btn--orange:hover,
 a.btn--orange:hover {
-  color: #fff;
-  background: #f56500;
+  color: black;
+  /* color: #fff; */
+  /* background: #f56500; */
 }
 
 /* ログインボタン */
@@ -136,12 +138,14 @@ button.login {
 
 .login--orange,
 a.login--orange {
-  color: #fff;
-  background-color: #eb6100;
+  color: black;
+  /* color: #fff; */
+  /* background-color: #eb6100; */
 }
 .login--orange:hover,
 a.login--orange:hover {
-  color: #fff;
-  background: #f56500;
+  color: black;
+  /* color: #fff; */
+  /* background: #f56500; */
 }
 
