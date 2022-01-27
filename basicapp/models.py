@@ -2,20 +2,6 @@ from django.contrib.auth.models import User
 # from accounts.models import CustomUser
 from django.db import models
 
-# class PlaceChoices(models.TextChoices):
-#     KISUIDOU = 'kisuidou', '紀伊水道'
-#     OSAKAWAN = 'osakawan', '大阪湾'
-#     HARIMANADA = 'harimanada', '播磨灘'
-#     BISANSETO = 'bisanseto', '備讃瀬戸'
-#     BINGONADA = 'bingonada', '備後灘'
-#     HIUCHINADA = 'hiuchinada', '燧灘'
-#     AKINADA = 'akinada', '安芸灘'
-#     HIROSHIMAWAN = 'hiroshimawan', '広島湾'
-#     IYONADA = 'iyonada', '伊予灘'
-#     SUOUNADA = 'suounada', '周防灘'
-#     HIBIKINADA = 'hibikinada', '響灘'
-#     BUNGOSUIDOU = 'bungosuidou', '豊後水道'
-
 class Share(models.Model):
     """"赤潮観測モデル"""
 
