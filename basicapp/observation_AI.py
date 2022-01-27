@@ -28,12 +28,12 @@ def hantei(request):
     print(message)
 
     if features[0,0] == 1:
-        return render (request,'redtide_observe.html',{'akasio':"赤潮はありません。"})
+        return render (request,'basic/redtide_observe_ans.html',{'akasio':"赤潮はありません。"})
 
     elif features[0,1] == 1:
-        return render (request,'redtide_observe.html',{'akasio':"赤潮が発生しています。"})
+        return render (request,'basic/redtide_observe_ans.html',{'akasio':"赤潮が発生しています。"})
         # print("赤潮が発生しています。")
 
     else:
-        return render (request,'redtide_observe.html',{'akasio':"わかりません。"})
+        return render (request,'basic/redtide_observe_ans.html',{'akasio':"わかりません。"})
         # print("わかりません。")

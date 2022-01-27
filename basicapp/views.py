@@ -33,7 +33,8 @@ class PasswordResetCompleteView(generic.TemplateView):
 
 class RedtideObserveView(generic.TemplateView):
     template_name = "basic/redtide_observe.html"
-    def a_page(request):
+
+def ans(request):
         return hantei(request)
 
 class RedtidePredictionView(generic.TemplateView):

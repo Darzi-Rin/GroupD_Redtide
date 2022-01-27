@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     {% block title %}
-    赤潮観測ページ
+    赤潮観測結果ページ
     {% endblock %}
 </head>
 
@@ -23,8 +23,7 @@
         <div class="menu">
             <ul>
                 <li><a href="{% url 'basicapp:index' %}">トップページへ戻る</a></li>
-
-                <form action="ans/" method="post">{% csrf_token %}
+                <form action="" method="post">{% csrf_token %}
                     <input type="date" name="date" id="date">
                     <select name="area" id="area">
                         <option value="tokyo">東京湾</option>
@@ -35,10 +34,8 @@
             </ul>
         </div>
     </header>
-    <!-- <p>{{akasio}}</p> -->
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d415736.5359568162!2d139.8178931!3d35.5057201!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1643259983469!5m2!1sja!2sjp"
-        width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <h2>{{akasio}}</h2>
+    <img src="c:\\2021-07-22-00_00_2021-07-22-23_59_Sentinel-2_L2A_True_color.jpg" alt="">
 </body>
 
 </html>
