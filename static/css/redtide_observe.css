@@ -101,3 +101,59 @@ black-bg(ハンバーガーメニュー解除用bg)
   opacity: 0.3;
   visibility: visible;
 }
+
+
+/* 新 */
+/* ボタンの位置 */
+
+.account ul li{
+  display: inline-block;
+  margin-top: 11px;
+}
+
+/* ログインボタン */
+.login,
+a.login,
+button.login {
+  /* font-size: 1.6rem; */
+  font-weight: 100;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 2px 4px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.login--orange,
+a.login--orange {
+  color: #fff;
+  background-color: #eb6100;
+}
+.login--orange:hover,
+a.login--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+
+/* .menu {
+  position: fixed;
+} */
+
+
+
+/* header{
+  position: fixed; ウィンドウを基準に画面に固定
+} */

@@ -123,3 +123,57 @@ black-bg(ハンバーガーメニュー解除用bg)
   opacity: 0.3;
   visibility: visible;
 }
+
+
+/* 新 */
+/* .title {
+  position: relative; 
+  top: 55px;
+  margin-left: 12%;
+} */
+
+/* .box {
+  position: relative; 
+  top: 55px;
+  margin-left: 12%;
+} */
+.box {
+  /* padding: 0em 0em; */
+  margin: 2em 0;
+  position: relative;
+  top: 55px;
+  margin-left: 12%;
+  font-weight: bold;
+  border: solid 3px #6699ff;
+  width: 98px;
+}
+.box h2 {
+  margin: 0;
+  padding: 0;
+}
+
+input.adress_pass {
+  /* width: 100%; */
+  position: relative;
+  top: 40px;
+}
+
+.forgot,
+.login_button {
+  position: relative;
+  top: 40px;
+}
+
+.login_button {
+  display: inline-block;
+  border-radius: 4%; /* 角丸       */
+  font-size: 18pt; /* 文字サイズ */
+  text-align: center; /* 文字位置   */
+  cursor: pointer; /* カーソル   */
+  padding: 12px 12px; /* 余白       */
+  background: #ffffff; /* 背景色     */
+  color: #000000; /* 文字色     */
+  line-height: 1em; /* 1行の高さ  */
+  opacity: 1; /* 透明度     */
+  transition: 0.3s; /* なめらか変化 */
+}

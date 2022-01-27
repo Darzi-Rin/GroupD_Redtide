@@ -106,3 +106,19 @@ black-bg(ハンバーガーメニュー解除用bg)
   opacity: 0.3;
   visibility: visible;
 }
+
+/* ここから新しいCSS */
+
+h1 {
+  text-align:center;
+  position: relative; 
+  top: 200px;
+}
+
+.yn {
+  position: relative; 
+  top: 200px;
+  /* line-height: 0px; */
+  margin-left: 60%;
+}
+

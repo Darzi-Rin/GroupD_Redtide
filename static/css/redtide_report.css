@@ -106,3 +106,18 @@ black-bg(ハンバーガーメニュー解除用bg)
   opacity: 0.3;
   visibility: visible;
 }
+
+/* sinn */
+.button {
+  display: inline-block;
+  border-radius: 4%; /* 角丸       */
+  font-size: 18pt; /* 文字サイズ */
+  text-align: center; /* 文字位置   */
+  cursor: pointer; /* カーソル   */
+  padding: 12px 12px; /* 余白       */
+  background: #ffffff; /* 背景色     */
+  color: #6699ff; /* 文字色     */
+  line-height: 1em; /* 1行の高さ  */
+  opacity: 1; /* 透明度     */
+  transition: 0.3s; /* なめらか変化 */
+}
