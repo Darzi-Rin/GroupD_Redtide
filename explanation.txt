@@ -9,7 +9,7 @@ password_reset_complete.html -> パスワードリセット完了画面
 redtide_prediction.html      -> 赤潮予報
 redtide_observe.html         -> 赤潮観測
 redtide_report.html          -> 赤潮報告(共有)
-share_list.html    -> 赤潮共有情報閲覧画面
+share_list.html    -> 赤潮共有情報閲覧画面(kikuchiブランチonly)
 share_place.html   -> 赤潮報告(エリア選択)
 share_mail.html    -> 報告・共有完了画面
 p_policy.html      -> プライバシーポリシー
