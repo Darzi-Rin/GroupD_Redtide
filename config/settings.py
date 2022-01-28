@@ -179,3 +179,6 @@ LOGGING = {
         },
     }
 }
+
+#判定モデルの追加
+MODEL_FILE_PATH = os.path.join(BASE_DIR, 'akasio_model.h5')

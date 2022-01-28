@@ -4,9 +4,11 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 from keras.models import load_model
 
+from config.settings import MODEL_FILE_PATH
+
 def hantei(request):
 
-    model = load_model('c:\\akasio_model.h5')
+    model = load_model(MODEL_FILE_PATH)
 
     categories = ["None", "True"]
     #image_pathは判定したい画像のパス
