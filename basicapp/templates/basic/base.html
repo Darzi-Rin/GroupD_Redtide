@@ -34,14 +34,14 @@
         <span class="hamburger__line hamburger__line--3"></span>
     </div>
     <nav class="sp-nav">
-    <ul>
-        <p>メニュー</p>
-        <li><a href="{% url 'basicapp:index' %}">トップページへ</a></li>
-        <li><a href="{% url 'basicapp:sign_up' %}">会員登録</a></li>
-        <li><a href="{% url 'basicapp:login' %}">ログイン</a></li>
-        <li><a href="{% url 'basicapp:inquiry' %}">お問い合わせ</a></li>
-        <li><a href="{% url 'basicapp:p_poricy' %}">プライバシーポリシー</a></li>
-    </ul>
+      <ul class="menu-list">
+        <!-- <p>メニュー</p> -->
+        <li><a href="{% url 'basicapp:index' %}"    class="menu menu--orange">トップページへ</a></li>
+        <li><a href="{% url 'basicapp:sign_up' %}"  class="menu menu--orange">会員登録</a></li>
+        <li><a href="{% url 'basicapp:login' %}"    class="menu menu--orange">ログイン</a></li>
+        <li><a href="{% url 'basicapp:inquiry' %}"  class="menu menu--orange">お問い合わせ</a></li>
+        <li><a href="{% url 'basicapp:p_poricy' %}" class="menu menu--orange">プライバシーポリシー</a></li>
+      </ul>
     </nav>
     <div class="black-bg" id="js-black-bg"></div>
 </div>
