@@ -24,11 +24,13 @@
             <ul>
                 <li><a href="{% url 'basicapp:index' %}">トップページへ戻る</a></li>
 
+                {% csrf_token %}
+
                 <form action="ans/" method="post">{% csrf_token %}
                     <input type="date" name="date" id="date">
                     <select name="area" id="area">
-                        <option value="tokyo">東京湾</option>
-                        <option value="osaka">大阪湾</option>
+                        <option value="tokyo" name='tokyo'>東京湾</option>
+                        <option value="osaka" name="osaka">大阪湾</option>
                     </select>
                     <input type="submit" value="決定">
                 </form>

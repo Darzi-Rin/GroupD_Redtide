@@ -1,30 +1,55 @@
+from asyncio.windows_events import NULL
+from datetime import date
+from glob import glob
+from pickle import FALSE
+from re import A
+from tkinter import image_names
 from django.shortcuts import render
+from django.template import context
+from django.views import View
 from tensorflow import keras
 from tensorflow.keras.preprocessing import image
 import numpy as np
 from keras.models import load_model
 
+import glob
+
 from config.settings import MODEL_FILE_PATH
 from config.settings import AI_IMG
+
+# def hantei(self, request, *args, **kwargs): 
+    #     context={
+    #         'date':request.POST['date'],
+    #         'area':request.POST['area'],
+    #         'akasio':akasio,
+    #     }
 
 
 def hantei(request):
 
     model = load_model(MODEL_FILE_PATH)
 
+    
+    date=request.POST['date']
+    area=request.POST['area']
+
+    if date== '':
+        #日付が選択されなかった時
+        return render (request,'basic/redtide_observe_ans.html',{'akasio':"日付を選択してください。"})
+    else:
+        #formで受け取ったareaとdateでファイル名検索
+        search_img=glob.glob('{}/{}/{}.jpg'.format(AI_IMG,area,date))
+        if search_img == []:
+            #画像がなかった場合
+            return render (request,'basic/redtide_observe_ans.html',{'akasio':"画像がありません。"})
+        else:
+            #リストから抽出
+            img_name=search_img[0]
+
+
     categories = ["None", "True"]
-    #image_pathは判定したい画像のパス
-    #なし
-    # img_path = "img/2020-01-06-00_00_2020-01-06-23_59_Sentinel-2_L2A_True_color.jpg"
-    #img_path = "img/2021-01-20-00_00_2021-01-20-23_59_Sentinel-2_L2A_True_colorA.jpg"
-    #あり
-    # img_path = "img/2021-07-22-00_00_2021-07-22-23_59_Sentinel-2_L2A_True_color.jpg"
-    img_path = "img/2021-07-22-00_00_2021-07-22-23_59_Sentinel-2_L2A_True_color.jpg"
-
-    # img_path = None
-
-    if img_path == None:
-        return render (request,'basic/redtide_observe_ans.html',{'akasio':"画像がありません。"})
+    
+    img_path = img_name
 
     img = image.load_img(img_path, target_size=(60, 60, 3))
     x = image.img_to_array(img)
@@ -37,14 +62,19 @@ def hantei(request):
             cat = categories[i]
     message = "それは" + cat
     print(message)
-
     if features[0,0] == 1:
-        return render (request,'basic/redtide_observe_ans.html',{'akasio':"赤潮はありません。"})
+        akasio='赤潮はありません。'
+        # return render (request,'basic/redtide_observe_ans.html',{'akasio':"赤潮はありません。"})
 
     elif features[0,1] == 1:
-        return render (request,'basic/redtide_observe_ans.html',{'akasio':"赤潮が発生しています。"},{'img':("{}/2021-07-22-00_00_2021-07-22-23_59_Sentinel-2_L2A_True_color.jpg".format(AI_IMG))})
+        akasio='赤潮が発生しています。'
+        # return render (request,'basic/redtide_observe_ans.html',{'akasio':"赤潮が発生しています。"})
         # print("赤潮が発生しています。")
 
     else:
-        return render (request,'basic/redtide_observe_ans.html',{'akasio':"わかりません。"})
+        akasio='わかりません。'
+        # return render (request,'basic/redtide_observe_ans.html',{'akasio':"わかりません。"})
         # print("わかりません。")
+
+
+    return render (request,'basic/redtide_observe_ans.html',{'akasio':akasio})
