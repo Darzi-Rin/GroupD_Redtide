@@ -48,12 +48,11 @@ class RedtideReportView(generic.CreateView):
     model = Share
     template_name = "basic/redtide_report.html"
     form_class = CreateForm
-    success_url = reverse_lazy('basicapp:share_list')
-    
+    success_url = reverse_lazy('basicapp:share_mail')
 
     def form_valid(self, form):
         create = form.save(commit=False)
-        # create.user = self.request.user
+        create.user = self.request.user
         create.save()
         messages.success(self.request, '報告を作成しました。')
         return super().form_valid(form)
@@ -86,7 +85,6 @@ class ShareDeleteView(generic.DeleteView):
 
 class SharePlaceView(generic.TemplateView):
     template_name = "basic/share_place.html"
-    success_url = reverse_lazy('basicapp:share_mail')
 
 class ShareMailView(generic.TemplateView):
     template_name = "basic/share_mail.html"
