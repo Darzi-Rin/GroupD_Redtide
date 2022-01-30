@@ -9,18 +9,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/redtide_report.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/redtide_report.css' %}"> -->
     {% block title %}
     赤潮報告
     {% endblock %}
 </head>
 
 {% block contents %}
-
-<body style="margin-top: 150px;">
+<body style="margin-top: 150px; text-align: center;">
     <h1>赤潮報告</h1>
     <div>
-        <table>
+        <table style="margin-left: auto; margin-right: auto;">
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <table>

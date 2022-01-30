@@ -24,11 +24,13 @@
             <ul>
                 <li><a href="{% url 'basicapp:index' %}">トップページへ戻る</a></li>
 
-                <form action="ans/" method="post">{% csrf_token %}
+                {% csrf_token %}
+
+                <form action="ans/" method="post" style="margin-top: 30px;">{% csrf_token %}
                     <input type="date" name="date" id="date">
                     <select name="area" id="area">
-                        <option value="tokyo">東京湾</option>
-                        <option value="osaka">大阪湾</option>
+                        <option value="tokyo" name='tokyo'>東京湾</option>
+                        <!-- <option value="osaka" name="osaka">大阪湾</option> -->
                     </select>
                     <input type="submit" value="決定">
                 </form>
@@ -36,9 +38,10 @@
         </div>
     </header>
     <!-- <p>{{akasio}}</p> -->
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d415736.5359568162!2d139.8178931!3d35.5057201!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1643259983469!5m2!1sja!2sjp"
-        width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <img src="{% static 'assets/img/image0.png' %}" alt="" width="900" height="450" style="margin-top: 80px;">
+    <!-- <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d25932.09175291349!2d139.96236869729407!3d35.66440616883428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1643351731234!5m2!1sja!2sjp"
+        width="600" height="450" style="border:0; margin-top: 80px;" allowfullscreen="" loading="lazy"></iframe> -->
 </body>
 
 </html>

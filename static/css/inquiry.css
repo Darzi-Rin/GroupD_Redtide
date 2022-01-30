@@ -1,11 +1,31 @@
+/* inquiry-form {
+  width: 90%;
+  height: 400px;
+  margin-left: 5%;
+} */
+
+/* ここから新しいCSS */
 .inquiry {
   margin-left: 5%;
+  margin-top: 65px;
 }
 
 textarea.inquiry-form {
   width: 90%;
-  height: 400px;
+  height: 340px;
   margin-left: 5%;
+}
+
+.box {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  border: solid 3px #6699ff;
+  width: 150px;
+}
+.box h2 {
+  margin: 0;
+  padding: 0;
 }
 
 /* inquiry-form {
@@ -17,18 +37,17 @@ textarea.inquiry-form {
 input.send {
   bottom: 50px;
   margin-left: 80%;
-  position: relative; 
+  position: relative;
   top: 20px;
-  display       : inline-block;
-  border-radius : 4%;          /* 角丸       */
-  font-size     : 18pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 12px 12px;   /* 余白       */
-  background    : #ffffff;     /* 背景色     */
-  color         : #000000;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  opacity       : 1;           /* 透明度     */
-  transition    : 0.3s;         /* なめらか変化 */
+  display: inline-block;
+  border-radius: 4%; /* 角丸       */
+  font-size: 18pt; /* 文字サイズ */
+  text-align: center; /* 文字位置   */
+  cursor: pointer; /* カーソル   */
+  padding: 12px 12px; /* 余白       */
+  background: #ffffff; /* 背景色     */
+  color: #000000; /* 文字色     */
+  line-height: 1em; /* 1行の高さ  */
+  opacity: 1; /* 透明度     */
+  transition: 0.3s; /* なめらか変化 */
 }
-

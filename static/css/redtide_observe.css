@@ -1,5 +1,9 @@
-.menu {
-  position: fixed;
+/* 新 */
+/* ボタンの位置 */
+
+.menu ul li{
+  display: inline-block;
+  margin-top: 11px;
 }
 
 /* ログインボタン */
@@ -25,7 +29,25 @@ button.login {
   letter-spacing: 0.1em;
   color: #212529;
   border-radius: 0.5rem;
+  border-style: solid; border-color: black;
 }
+
+.login--orange,
+a.login--orange {
+  color: black;
+  background-color: white;
+}
+.login--orange:hover,
+a.login--orange:hover {
+  color: black;
+  background: white;
+}
+
+
+/* .menu {
+  position: fixed;
+} */
+
 
 
 /* header{

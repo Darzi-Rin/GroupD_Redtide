@@ -32,22 +32,21 @@
     {% block contents %}
     <!-- <h3>※現在の赤潮の状況</h3>
     <h3>※ここに赤潮の画像を表示する</h3> -->
-    <div style="margin-top: 80px;">
-        <h2>現在発生している赤潮</h2>
-    </div>
     <div class="photo">
-        <img src="{% static 'images/nature_umi_akashio.png' %}" alt="サンプル" width="150" height="100">
-        <img src="{% static 'images/nature_umi_akashio.png' %}" alt="サンプル" width="150" height="100">
-        <img src="{% static 'images/nature_umi_akashio.png' %}" alt="サンプル" width="150" height="100">
-        <img src="{% static 'images/nature_umi_akashio.png' %}" alt="サンプル" width="150" height="100">
-        <img src="{% static 'images/nature_umi_akashio.png' %}" alt="サンプル" width="150" height="100">
+        <div class="img__inner">
+          <img class = 'img' src="{% static 'assets/img/red-tide1.png' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide2.png' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide3.png' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide4.png' %}" alt="サンプル" width="150" height="100">
+          <!-- <h3>※仮として赤潮のイラストを表示</h3> -->
+        </div>
     </div>
 
     <div class="red-tide">
         <ul>
-            <li><a href="{% url 'basicapp:redtide_prediction' %}" class="btn btn--orange">赤潮の予報を見る</a></li>
-            <li><a href="{% url 'basicapp:share_place' %}" class="btn btn--orange">赤潮の情報を共有する</a></li>
-            <li><a href="{% url 'basicapp:redtide_observe' %}" class="btn btn--orange">赤潮の観測を見る</a></li>
+            <li><a href="{% url 'basicapp:redtide_prediction' %}" class="btn btn--orange">　赤潮の予報を見る　</a></li>
+            <li><a href="{% url 'basicapp:share_place' %}"        class="btn btn--orange">赤潮の情報を共有</a></li>
+            <li><a href="{% url 'basicapp:redtide_observe' %}"    class="btn btn--orange">　赤潮の観測を見る　</a></li>
         </ul>
     </div>
 </body>

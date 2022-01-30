@@ -13,11 +13,16 @@
 </head>
 <header>
     <!-- トップページへ戻る -->
-    <a href="{% url 'basicapp:index' %}">トップへ</a>
+    <div>
+        <a href="{% url 'basicapp:index' %}">トップへ</a>
+    </div>
+    <div>
+        <a href="{% url 'basicapp:share_list' %}">現在共有されている赤潮を見に行く</a>
+    </div>
 </header>
 
 <body onload="initialize()">
-    <div id="map" style="width:100%; height: 560px; margin-top: 80px;"></div>
+    <div id="map" style="width:900; height: 450; margin-top: 80px;"></div>
 </body>
 
 </html>

@@ -8,6 +8,7 @@ from .models import Share
 from .forms import CreateForm
 
 from basicapp.observation_AI import hantei
+# from basicapp.observation_AI import image
 
 # Create your views here.
 logger = logging.getLogger(__name__)
@@ -40,7 +41,6 @@ class RedtideObserveView(generic.TemplateView):
 
 def ans(request):
         return hantei(request)
-
 class RedtidePredictionView(generic.TemplateView):
     template_name = "basic/redtide_prediction.html"
 
@@ -48,7 +48,7 @@ class RedtideReportView(generic.CreateView):
     model = Share
     template_name = "basic/redtide_report.html"
     form_class = CreateForm
-    success_url = reverse_lazy('basicapp:share_mail')
+    
 
     def form_valid(self, form):
         create = form.save(commit=False)
@@ -85,6 +85,7 @@ class ShareDeleteView(generic.DeleteView):
 
 class SharePlaceView(generic.TemplateView):
     template_name = "basic/share_place.html"
+    success_url = reverse_lazy('basicapp:share_mail')
 
 class ShareMailView(generic.TemplateView):
     template_name = "basic/share_mail.html"

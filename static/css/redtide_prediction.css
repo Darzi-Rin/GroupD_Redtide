@@ -1,5 +1,9 @@
-.menu {
-  position: fixed;
+/* sinn */
+/* ボタンの位置 */
+
+.men ul li{
+  display: inline-block;
+  margin-top: 11px;
 }
 
 /* ログインボタン */
@@ -25,14 +29,30 @@ button.login {
   letter-spacing: 0.1em;
   color: #212529;
   border-radius: 0.5rem;
+  margin-top: 10px;
 }
 
+.login--orange,
+a.login--orange {
+  color: black;
+  background-color: white;
+}
+.login--orange:hover,
+a.login--orange:hover {
+  color: black;
+  background: white;
+}
+
+
+/* .abc {
+  margin-top: 100px;
+} */
 
 /* .hamburger {
   position: fixed;
 } */
 
-p {
+/* p {
   margin-bottom: 500px;
-}
+} */
 
