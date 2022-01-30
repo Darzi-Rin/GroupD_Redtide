@@ -34,6 +34,7 @@
     <h3>※ここに赤潮の画像を表示する</h3> -->
     <div class="photo">
         <div class="img__inner">
+            <!-- <img src="{% static 'assets/img/red-tide11.png' %}" alt="" width="80%" height="550"> -->
           <img class = 'img' src="{% static 'assets/img/red-tide1.png' %}" alt="サンプル" width="150" height="100">
           <img class = 'img' src="{% static 'assets/img/red-tide2.png' %}" alt="サンプル" width="150" height="100">
           <img class = 'img' src="{% static 'assets/img/red-tide3.png' %}" alt="サンプル" width="150" height="100">
@@ -42,7 +43,7 @@
         </div>
     </div>
 
-    <div class="red-tide">
+    <div class="red-tide" style="margin-top: 250px;">
         <ul>
             <li><a href="{% url 'basicapp:redtide_prediction' %}" class="btn btn--orange">　赤潮の予報を見る　</a></li>
             <li><a href="{% url 'basicapp:share_place' %}"        class="btn btn--orange">赤潮の情報を共有</a></li>

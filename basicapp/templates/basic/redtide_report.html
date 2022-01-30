@@ -19,15 +19,17 @@
 <body style="margin-top: 150px; text-align: center;">
     <h1>赤潮報告</h1>
     <div>
-        <table style="margin-left: auto; margin-right: auto;">
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <table>
-                    {{ form.as_table }}
-                </table>
-                <button type="submit">作成</button>
-            </form>
-        </table>
+        <div style="margin-left: 800px;">
+            <table>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <table>
+                        {{ form.as_table }}
+                    </table>
+                    <button type="submit" style="margin-right: 800px; margin-top: 20px;">作成</button>
+                </form>
+            </table>
+        </div>
         <div style="margin-top: 60px;">
             <a href="{% url 'basicapp:share_list' %}">現在共有されている赤潮を見に行く</a>
         </div>
