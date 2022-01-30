@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             name='Share',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('day', models.CharField(max_length=40, verbose_name='エリア')),
+                ('day', models.CharField(max_length=20, verbose_name='エリア')),
                 ('content', models.TextField(blank=True, max_length=20, null=True, verbose_name='詳細な情報')),
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='作成日時')),
                 ('updated_at', models.DateTimeField(auto_now=True, verbose_name='更新日時')),
