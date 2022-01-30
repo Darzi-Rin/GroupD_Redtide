@@ -187,7 +187,7 @@
   .btn--orange:hover,
   a.btn--orange:hover {
     color: #fff;
-    background: #f56500;
+    background: white;
   }
 
   /* ログインボタン */
@@ -223,7 +223,7 @@
   .login--orange:hover,
   a.login--orange:hover {
     color: #fff;
-    background: #f56500;
+    background: white;
   }
 
 

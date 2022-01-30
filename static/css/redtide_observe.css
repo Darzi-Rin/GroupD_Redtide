@@ -1,7 +1,7 @@
 /* 新 */
 /* ボタンの位置 */
 
-.account ul li{
+.menu ul li{
   display: inline-block;
   margin-top: 11px;
 }
@@ -29,18 +29,19 @@ button.login {
   letter-spacing: 0.1em;
   color: #212529;
   border-radius: 0.5rem;
+  border-style: solid; border-color: black;
 }
 
-/* .login--orange,
+.login--orange,
 a.login--orange {
-  color: #fff;
-  background-color: #eb6100;
+  color: black;
+  background-color: white;
 }
 .login--orange:hover,
 a.login--orange:hover {
-  color: #fff;
-  background: #f56500;
-} */
+  color: black;
+  background: white;
+}
 
 
 /* .menu {

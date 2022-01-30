@@ -115,7 +115,7 @@ ul.menu-list li {
 /* メニューボタンの装飾 */
 .menu,
 a.menu,
-button.menu {
+button.men {
   font-weight: 100;
   line-height: 1.5;
   position: relative;
@@ -138,13 +138,13 @@ button.menu {
 
 .menu--orange,
 a.menu--orange {
-  color: #fff;
-  background-color: #eb6100;
+  color: black;
+  background-color: white;
 }
 .menu--orange:hover,
 a.menu--orange:hover {
-  color: #fff;
-  background: #f56500;
+  color: black;
+  background: white;
 }
 
 /* .box {
@@ -157,4 +157,19 @@ a.menu--orange:hover {
 .box h2 {
   margin: 0; 
   padding: 0;
+} */
+
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: black;
+  border: solid 2px black;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+/* .btn-flat-border:hover {
+  background: white;
+  color: white;
 } */

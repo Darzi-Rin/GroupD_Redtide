@@ -128,15 +128,15 @@ a.btn--orange {
 /* .btn--orange:hover,
 a.btn--orange:hover {
   color: #fff;
-  background: #f56500;
+  background: white;
 } */
 
 /* ログインボタン */
-.login,
+/* .login,
 a.login,
-button.login {
+button.login { */
   /* font-size: 1.6rem; */
-  font-weight: 100;
+  /* font-weight: 100;
   line-height: 1.5;
   position: relative;
   display: inline-block;
@@ -155,7 +155,7 @@ button.login {
   color: #212529;
   border-radius: 0.5rem;
   border-style: solid; border-color: black;
-}
+} */
 
 .login--orange,
 a.login--orange {
@@ -165,7 +165,7 @@ a.login--orange {
 /* .login--orange:hover,
 a.login--orange:hover {
   color: #fff;
-  background: #f56500;
+  background: white;
 } */
 
 /* .photo .img__inner img {
