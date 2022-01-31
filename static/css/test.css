@@ -35,10 +35,10 @@
   }
 
 
-  h2 {
+  /* h2 {
     margin-left: 5%;
     margin-top: 50px
-  }
+  } */
 
   /* 会員登録とログインボタン */
   @media screen and (min-width: 767px) { /* PCの場合 */
