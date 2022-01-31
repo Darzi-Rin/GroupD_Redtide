@@ -49,7 +49,7 @@ def hantei(request):
             img_name=search_img[0]
             
             imgs1=search_img2[0]
-            imgs_change=imgs1[39:]
+            imgs_change=imgs1[41:]
 
 
     categories = ["None", "True"]
