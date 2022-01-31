@@ -12,3 +12,10 @@
   margin: 0;
   padding: 0;
 } */
+
+.p_poricy {
+  margin-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  border: solid 3px black;
+}
