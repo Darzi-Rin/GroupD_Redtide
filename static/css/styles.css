@@ -14,21 +14,8 @@
 } */
 
 /* 「現在発生している赤潮の枠」 */
-.box {
-  padding: 0.5em 1em;
-  margin: 2em 0;
-  font-weight: bold; /* ? */
-  border: solid 3px #6699FF; /* ボーダーの色 */
-  width:240px; /*　枠の横幅 */
-  margin-left: 10%;
-  /* text-align: center; */
-}
 
 /* その枠の位置 */
-.box h2 {
-  margin: 0; 
-  padding: 0;
-}
 
 
 /* h2 {
@@ -67,23 +54,6 @@ h3 {
   top: 0px;
   margin-bottom: 10px;
   border-style: solid; border-color: black;
-}
-
-.inquiry {
-  margin-left: 5%;
-}
-
-textarea.inquiry-form {
-  width: 90%;
-  height: 400px;
-  margin-left: 5%;
-}
-
-input.send {
-  bottom: 50px;
-  margin-left: 80%;
-  position: relative; 
-  top: 20px;
 }
 
 /* ボタン */

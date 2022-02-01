@@ -104,12 +104,11 @@ black-bg(ハンバーガーメニュー解除用bg)
 }
 
 /* メニュー一覧の'・'を非表示 */
-li {
-  list-style: none;
-}
 
 ul.menu-list li {
   margin-bottom: 10px;
+  list-style: none;
+
 }
 
 /* メニューボタンの装飾 */
@@ -147,17 +146,6 @@ a.menu--orange:hover {
   background: white;
 }
 
-/* .box {
-  padding: 0.5em 1em;
-  margin: 2em 0;
-  font-weight: bold;
-  border: solid 3px #6699FF;
-  width:240px;
-}
-.box h2 {
-  margin: 0; 
-  padding: 0;
-} */
 
 .btn-flat-border {
   display: inline-block;

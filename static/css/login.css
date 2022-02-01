@@ -5,25 +5,6 @@
   margin-left: 12%;
 } */
 
-/* .box {
-  position: relative; 
-  top: 55px;
-  margin-left: 12%;
-} */
-.box {
-  /* padding: 0em 0em; */
-  margin: 2em 0;
-  position: relative;
-  top: 55px;
-  margin-left: 12%;
-  font-weight: bold;
-  border: solid 3px #6699ff;
-  width: 98px;
-}
-.box h2 {
-  margin: 0;
-  padding: 0;
-}
 
 input.adress_pass {
   /* width: 100%; */
