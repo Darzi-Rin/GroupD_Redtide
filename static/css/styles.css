@@ -1,33 +1,12 @@
-/* 新 */
-/* .title {
-  margin-left: 10%;
+h1 {
+  margin: 0;
 }
-
-/* トップページの文字の位置 */
-
-.toppage{
-  margin-top: 10px;
-}
-
-/* .toppage h1 {
-  font-family: "Sawarabi+Mincho";
-} */
-
-/* 「現在発生している赤潮の枠」 */
-
-/* その枠の位置 */
-
-
-/* h2 {
-  margin-left: 5%;
-  margin-top: 50px
-} */
 
 .account {
   position: absolute;
   /* ボタンの位置 */
   right: 80px;
-  top: 20px;
+  top: 0px;
   /* width: 150px; */
   height: 40px;
   cursor: pointer;
