@@ -1,3 +1,7 @@
+.toppage h1 {
+  margin-left: 10px;
+}
+
 h1 {
   margin: 0;
 }
@@ -24,6 +28,8 @@ h3 {
   text-align: center;
 }
 
+/* 予報、共有、観測のボタン */
+
 .red-tide ul li {
   float: left;
   width: 32%;
@@ -32,10 +38,10 @@ h3 {
   position:relative;
   top: 0px;
   margin-bottom: 10px;
-  border-style: solid; border-color: black;
+  /* border-style: solid; border-color: black; */
 }
 
-/* ボタン */
+/* 予報、共有、観測のボタン */
 *,
 *:before,
 *:after {
@@ -43,10 +49,9 @@ h3 {
   box-sizing: inherit;
 }
 
-.btn,
-a.btn,
-button.btn {
-  /* font-size: 1.6rem; */
+.btn1,
+a.btn1,
+button.btn1 {
   font-weight: 700;
   line-height: 1.5;
   position: relative;
@@ -67,60 +72,36 @@ button.btn {
   border-radius: 0.5rem;
 }
 
-.btn--orange,
-a.btn--orange {
-  color:  black;
+/* 壊れたら */
+/* .btn1--orange,
+a.btn1--orange {
+  color:  red;
+  background-color: blue;
+} */
+/* 急遽これに戻す */
+
+a.btn1--orange {
+  color: black;
   background-color: white;
-  /* border-color: #212529; */
+  border-bottom: 5px solid silver;
+}
+a.btn1--orange:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: silver;
+  border-bottom: 2px solid grey;
+}
+a.btn1--shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
 
-/* .btn--orange:hover,
-a.btn--orange:hover {
-  color: #fff;
-  background: white;
-} */
-
-/* ログインボタン */
-/* .login,
-a.login,
-button.login { */
-  /* font-size: 1.6rem; */
-  /* font-weight: 100;
-  line-height: 1.5;
-  position: relative;
-  display: inline-block;
-  padding: 2px 4px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #212529;
-  border-radius: 0.5rem;
-  border-style: solid; border-color: black;
-} */
 
 .login--orange,
 a.login--orange {
   color: black;
   background-color: white;
 }
-/* .login--orange:hover,
-a.login--orange:hover {
-  color: #fff;
-  background: white;
-} */
-
-/* .photo .img__inner img {
-  width: 40%;    
-  height: auto;  
-} */
 
 /* 写真の表示 */
 .img__inner{
