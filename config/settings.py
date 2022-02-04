@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from telnetlib import AUTHENTICATION
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'basicapp.apps.BasicappConfig',
+    'accounts.apps.AccountsConfig',
 
     'django.contrib.sites',
     'allauth',
@@ -135,6 +137,30 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # django-allauthで利用するdjango.contrib.sitesを使うためにサイト識別IDを設定
 SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+    'allauth.account.auth_backends.AuthenticationBackend',
+# 一般ユーザー用(メールアドレス認証)
+    'django.contrib.auth.backends.ModelBackend',
+# 管理サイト用(ユーザー名認証)
+)
+
+# メールアドレス認証に変更する設定
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_USERNAME_REQUIRED = False
+
+# サインアップにメールアドレス確認をはさむよう設定
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_REQUIRED = True
+
+LOGIN_REDIRECT_URL = 'diary:index'
+ACCOUNT_LOGUOUT_REDIRECT_URL = 'account_login'
+
+ACCOUNT_LOGOUT_ON_GET = True
+
+ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
+
+ACCOUNT_FROM_EMAIL = 'admin@example.com'
 
 # MEDIA設定
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

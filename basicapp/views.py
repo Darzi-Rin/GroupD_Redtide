@@ -14,6 +14,8 @@ class IndexView(generic.TemplateView):
 class InquiryView(generic.TemplateView):
     template_name = "basic/inquiry.html"
 
+
+
 class LoginView(generic.TemplateView):
     template_name = "basic/login.html"
 
