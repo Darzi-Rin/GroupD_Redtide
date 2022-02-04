@@ -4,6 +4,7 @@ function initialize() {
         zoom: 10,
         center: latlng,
         mapTypeId: google.maps.MapTypeId.SATELLITE,
+        mapTypeControl: false, //マップタイプ コントロール
         zoomControl: false,
         streetViewControl: false,
         RotateControl: false,
@@ -246,38 +247,38 @@ function initialize() {
         //千葉港
         lat: '35.5790285', //緯度
         lng: '140.0321934', //経度
-        url: 'http://127.0.0.1:8000/redtide_report' //リンク先(awsエンドポイントを記入)
+        url: 'https://www.pref.chiba.lg.jp/kouwan/chibanokouwan/chiba/' //リンク先(awsエンドポイントを記入)
     });
     data.push({
         //東京港
         lat: '35.5995168',
         lng: '139.7944278',
-        url: 'http://127.0.0.1:8000/redtide_report'
+        url: 'https://www.kouwan.metro.tokyo.lg.jp/'
         
     });
     data.push({
         //川崎港
         lat: '35.5014654',
         lng: '139.774088',
-        url: 'http://127.0.0.1:8000/redtide_report'
+        url: 'https://www.city.kawasaki.jp/kurashi/category/29-6-0-0-0-0-0-0-0-0.html'
     });
     data.push({
         //横浜港
         lat: '35.4010755',
         lng: '139.6501657',
-        url: 'http://127.0.0.1:8000/redtide_report'
+        url: 'https://www.city.yokohama.lg.jp/city-info/yokohamashi/yokohamako/port_of_yokohama.html'
     });
     data.push({
         //横須賀港
         lat: '35.2832775',
         lng: '139.7014765',
-        url: 'http://127.0.0.1:8000/redtide_report'
+        url: 'https://www.city.yokosuka.kanagawa.jp/6620/minato/index.html'
     });
     data.push({
         //木更津港
         lat: '35.3848435',
         lng: '139.8345594',
-        url: 'http://127.0.0.1:8000/redtide_report'
+        url: 'https://www.pref.chiba.lg.jp/kouwan/chibanokouwan/kisarazu.html'
     });
 
     //初期位置に、上記配列の一番初めの緯度経度を格納

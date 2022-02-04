@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 class IndexView(generic.TemplateView):
     template_name = "basic/index.html"
-    # success_url = reverse_lazy('basicapp:index')
+    # success_url = reverse_lazy('basicapp:')
 
 class InquiryView(generic.TemplateView):
     template_name = "basic/inquiry.html"
@@ -48,7 +48,7 @@ class RedtideReportView(generic.CreateView):
     model = Share
     template_name = "basic/redtide_report.html"
     form_class = CreateForm
-    success_url = reverse_lazy('basicapp:share_mail')
+    success_url = reverse_lazy('basicapp:share_list')
 
     def form_valid(self, form):
         create = form.save(commit=False)
@@ -64,6 +64,7 @@ class RedtideReportView(generic.CreateView):
 class ShareListView(generic.ListView):
     model = Share
     template_name = "basic/share_list.html"
+    # success_url = reverse_lazy('basicapp:share_list')
     paginate_by = 2
 
     def get_queryset(self):
