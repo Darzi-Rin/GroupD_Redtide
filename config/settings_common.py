@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'basicapp.apps.BasicappConfig',
+    'accounts.apps.AccountsConfig',
 
     'django.contrib.sites',
     'allauth',
@@ -205,4 +206,4 @@ LOGGING = {
     }
 }
 
-# AUTH_USER_MODEL = 'accounts.CustomUser'
+AUTH_USER_MODEL = 'accounts.CustomUser'
