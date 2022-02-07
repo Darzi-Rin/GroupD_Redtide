@@ -135,6 +135,7 @@ STATICFILES_DIRS = (
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+AUTH_USER_MODEL = 'accounts.CustomUser'
 # django-allauthで利用するdjango.contrib.sitesを使うためにサイト識別IDを設定
 SITE_ID = 1
 
@@ -153,7 +154,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_REQUIRED = True
 
-# LOGIN_REDIRECT_URL = 'diary:index'
+# LOGIN_REDIRECT_URL = 'basicapp:index'
 # ACCOUNT_LOGUOUT_REDIRECT_URL = 'account_login'
 
 # ACCOUNT_LOGOUT_ON_GET = True
@@ -207,5 +208,3 @@ LOGGING = {
         },
     }
 }
-
-AUTH_USER_MODEL = 'accounts.CustomUser'
