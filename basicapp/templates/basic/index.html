@@ -9,7 +9,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/test.css' %}"> -->
+
+    
     {% block title %}
     赤潮観測トップページ
     {% endblock %}
@@ -19,27 +22,53 @@
     {% block header %}
     <header>
         <!-- タイトルと会員登録とログイン -->
+        <!-- <div class="toppage">
+            <h1>RED-TIDE</h1>
+        </div> -->
         <div class="toppage">
-            <h1>トップページ</h1>
+            <h1>RED-TIDE</h1>
         </div>
         <div class="account">
-            <a href="{% url 'basicapp:sign_up' %}">会員登録</a>
-            <a href="{% url 'basicapp:login' %}">ログイン</a>
+            <a href="{% url 'basicapp:sign_up' %}" class="login login--orange">会員登録</a>
+            <a href="{% url 'basicapp:login' %}"   class="login login--orange">ログイン</a>
         </div>
     </header>
     {% endblock %}
 
     {% block contents %}
-    <h3>※現在の赤潮の状況</h3>
-    <h3>※ここに赤潮の画像を表示する</h3>
-
+    <!-- <h3>※現在の赤潮の状況</h3>
+    <h3>※ここに赤潮の画像を表示する</h3> -->
     <div class="red-tide">
         <ul>
-            <li><a href="{% url 'basicapp:redtide_prediction' %}" class="button">赤潮の予報を見る</a></li>
-            <li><a href="{% url 'basicapp:redtide_report' %}" class="button">赤潮の情報を共有する</a></li>
-            <li><a href="{% url 'basicapp:redtide_observe' %}" class="button">赤潮の観測を見る</a></li>
+            <li><a href="{% url 'basicapp:redtide_prediction' %}" class="btn1 btn1--orange btn1--cubic btn1--shadow">　赤潮の予報を見る　</a></li>
+            <li><a href="{% url 'basicapp:redtide_report' %}"     class="btn1 btn1--orange btn1--cubic btn1--shadow">赤潮の情報を共有する</a></li>
+            <li><a href="{% url 'basicapp:redtide_observe' %}"    class="btn1 btn1--orange btn1--cubic btn1--shadow">　赤潮の観測を見る　</a></li>
         </ul>
     </div>
+
+    <div class="photo">
+        <div class="img__inner">
+          <img class = 'img' src="{% static 'assets/img/red-tide1.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide2.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide3.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide4.jpg' %}" alt="サンプル" width="150" height="100">
+          <!-- <img class = 'img' src="{% static 'assets/img/red-tide5.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide6.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide7.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide8.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide9.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide10.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide11.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide12.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide13.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide14.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide15.jpg' %}" alt="サンプル" width="150" height="100">
+          <img class = 'img' src="{% static 'assets/img/red-tide16.jpg' %}" alt="サンプル" width="150" height="100"> -->
+
+          <!-- <h3>※仮として赤潮のイラストを表示</h3> -->
+        </div>
+    </div>
+
 </body>
 
 </html>

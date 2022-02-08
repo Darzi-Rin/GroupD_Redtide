@@ -1,0 +1,128 @@
+.toppage h1 {
+  margin-left: 10px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.account {
+  position: absolute;
+  /* ボタンの位置 */
+  right: 80px;
+  top: 0px;
+  /* width: 150px; */
+  height: 40px;
+  cursor: pointer;
+  /* z-index: 300; */
+}
+
+
+.photo {
+  text-align: center;
+  margin-top: 100px;
+}
+
+
+h3 {
+  text-align: center;
+}
+
+/* 予報、共有、観測のボタン */
+
+.red-tide ul li {
+  float: left;
+  width: 32%;
+  text-align: center;
+  display: block;
+  position:relative;
+  top: 0px;
+  margin-bottom: 10px;
+  /* border-style: solid; border-color: black; */
+}
+
+/* 予報、共有、観測のボタン */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.btn1,
+a.btn1,
+button.btn1 {
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+/* 壊れたら */
+/* .btn1--orange,
+a.btn1--orange {
+  color:  red;
+  background-color: blue;
+} */
+/* 急遽これに戻す */
+
+a.btn1--orange {
+  color: black;
+  background-color: white;
+  border-bottom: 5px solid silver;
+}
+a.btn1--orange:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: silver;
+  border-bottom: 2px solid grey;
+}
+a.btn1--shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+
+.login--orange,
+a.login--orange {
+  color: black;
+  background-color: white;
+}
+
+/* 写真の表示 */
+.img__inner{
+  max-width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 1.0s;
+}
+
+.current-img{
+  opacity: 1;
+  z-index: 20;
+}

@@ -1,99 +1,44 @@
-.menu {
-  position: fixed;
+/* sin */
+/* ボタンの位置 */
+
+.account a{
+  display: inline-block;
+  margin-top: 11px;
+  margin-left: 10px;
 }
 
-
-/* 
-hamburger(ハンバーガーアイコン)
-=================================== */
-
-.hamburger {
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  width: 50px;
-  height: 40px;
+/* ログインボタン */
+.login,
+a.login,
+button.login {
+  /* font-size: 1.6rem; */
+  font-weight: 100;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 2px 4px;
   cursor: pointer;
-  z-index: 300;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
 }
 
-.hamburger__line {
-  position: absolute;
-  width: 50px;
-  height: 3px;
-  right: 0;
-  background-color: #000;
-  transition: all 0.5s;
+/* .login--orange,
+a.login--orange {
+  color: #fff;
+  background-color: #eb6100;
 }
-
-.hamburger__line--1 {
-  top: 1px;
-}
-
-.hamburger__line--2 {
-  top: 18px;
-}
-
-.hamburger__line--3 {
-  top: 36px;
-}
-
-/*ハンバーガーがクリックされたら*/
-.open .hamburger__line--1 {
-  transform: rotate(-45deg);
-  top: 11px;
-}
-
-.open .hamburger__line--2 {
-  opacity: 0;
-}
-
-.open .hamburger__line--3 {
-  transform: rotate(45deg);
-  top: 11px;
-}
-
-/* 
-sp-nav(ナビ)
-=================================== */
-.sp-nav {
-  position: fixed;
-  right: -100%; /*ハンバーガーがクリックされる前はWindow右側に隠す*/
-  top: 0;
-  width: 350px; /* 出てくるスライドメニューの幅 */
-  height: 100vh;
-  background-color: #fff;
-  transition: all 0.5s;
-  z-index: 200;
-  overflow-y: auto; /* メニューが多くなったらスクロールできるように */
-}
-
-/*ハンバーガーがクリックされたら右からスライド*/
-.open .sp-nav {
-  right: 0;
-}
-
-
-/* 
-black-bg(ハンバーガーメニュー解除用bg)
-=================================== */
-.black-bg {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 5;
-  background-color: #000;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s;
-  cursor: pointer;
-  z-index: 100;
-}
-
-/*ハンバーガーメニューが開いたら表示*/
-.open .black-bg {
-  opacity: 0.3;
-  visibility: visible;
-}
+.login--orange:hover,
+a.login--orange:hover {
+  color: #fff;
+  background: white;
+} */

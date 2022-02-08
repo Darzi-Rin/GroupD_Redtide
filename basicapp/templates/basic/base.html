@@ -6,12 +6,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/hamburger.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/p_poricy.css' %}">
+    <link rel="stylesheet" href="{% static 'css/password_reset_complete.css' %}">
+    <link rel="stylesheet" href="{% static 'css/password_reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/redtide_observe.css' %}">
+    <link rel="stylesheet" href="{% static 'css/redtide_prediction.css' %}">
+    <link rel="stylesheet" href="{% static 'css/redtide_report.css' %}">
+    <link rel="stylesheet" href="{% static 'css/redtide_share.css' %}">
+    <link rel="stylesheet" href="{% static 'css/redtide_box.css' %}">
+
+    <!-- <link rel="stylesheet" href="{% static 'css/test.css' %}"> -->
+
     <title>{% block title %}{% endblock %}</title>
     {% block head %}{% endblock %}
 </head>
+<script type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
 <!-- ハンバーガーメニュー -->
 <script type="text/javascript" src="{% static 'js/redtide.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script> -->
 <div id="nav-wrapper" class="nav-wrapper">
     <div class="hamburger" id="js-hamburger">
         <span class="hamburger__line hamburger__line--1"></span>
@@ -19,14 +35,13 @@
         <span class="hamburger__line hamburger__line--3"></span>
     </div>
     <nav class="sp-nav">
-    <ul>
-        <p>メニュー</p>
-        <li><a href="{% url 'basicapp:index' %}">トップページへ</a></li>
-        <li><a href="{% url 'basicapp:sign_up' %}">会員登録</a></li>
-        <li><a href="{% url 'basicapp:login' %}">ログイン</a></li>
-        <li><a href="{% url 'basicapp:inquiry' %}">お問い合わせ</a></li>
-        <li><a href="{% url 'basicapp:p_poricy' %}">プライバシーポリシー</a></li>
-    </ul>
+      <ul class="menu-list">
+        <li><a href="{% url 'basicapp:index' %}"    class="btn-flat-border">トップページへ</a></li>
+        <li><a href="{% url 'basicapp:sign_up' %}"  class="btn-flat-border">会員登録</a></li>
+        <li><a href="{% url 'basicapp:login' %}"    class="btn-flat-border">ログイン</a></li>
+        <li><a href="{% url 'basicapp:inquiry' %}"  class="btn-flat-border">お問い合わせ</a></li>
+        <li><a href="{% url 'basicapp:p_poricy' %}" class="btn-flat-border">プライバシーポリシー</a></li>
+      </ul>
     </nav>
     <div class="black-bg" id="js-black-bg"></div>
 </div>
