@@ -110,6 +110,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+akasio_model.h5
 
 # Spyder project settings
 .spyderproject
