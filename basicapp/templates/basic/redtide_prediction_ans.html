@@ -1,0 +1,42 @@
+{% extends 'basic/base.html' %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {% block title %}
+    赤潮予報結果
+    {% endblock %}
+</head>
+
+{% block contents %}
+
+<body>
+    <header>
+
+        <div class="menu">
+            <ul>
+                <li style="margin-top: 40px; margin-right: 75px;"><a href="{% url 'basicapp:index' %}">トップページへ戻る</a></li>
+                <form action="" method="post" style="margin-top: 30px; margin-left: 55px;">{% csrf_token %}
+                    <input type="date" name="date" id="date">
+                    <select name="area" id="area" style="margin-left: 20px;">
+                        <option value="tokyo">東京湾</option>
+                        <!-- <option value="osaka">大阪湾</option> -->
+                    </select>
+                    <input type="submit" value="決定">
+                </form>
+            </ul>
+        </div>
+    </header>
+    <h2 style="margin-top: 140px; margin-left: 100px;">{{yosoku}}</h2>
+    <!-- <h2>{{imgs1}}</h2> -->
+    <img src="{{imgs1}}" width="700" height="300" style="margin-left: 100px;">
+</body>
+</html>
+
+{% endblock %}
