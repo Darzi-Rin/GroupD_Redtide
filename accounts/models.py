@@ -6,4 +6,4 @@ class CustomUser(AbstractUser):
     """拡張ユーザーモデル"""
 
     class Meta:
-        verbose_name_plural = 'CusomUser'
+        verbose_name_plural = 'CustomUser'
