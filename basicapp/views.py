@@ -1,9 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 import logging
 from django.views import generic
 from django.urls import reverse_lazy
+from basicapp.forms import UserCreateForm
 
 from basicapp.observation_AI import hantei
+
+from . forms import UserCreateForm
+from django.contrib.auth import login, authenticate
+from django.views.generic import CreateView
 
 # Create your views here.
 logger = logging.getLogger(__name__)
@@ -49,5 +54,28 @@ class SharePlaceView(generic.TemplateView):
 class ShareMailView(generic.TemplateView):
     template_name = "basic/share_mail.html"
 
-class SignUpView(generic.TemplateView):
+# class SignUpView(generic.TemplateView):
+#     template_name = "basic/sign_up.html"
+
+class SignUpView(CreateView):
     template_name = "basic/sign_up.html"
+    form_class = UserCreateForm
+    success_url = reverse_lazy("basicapp:sign_up")
+#     def post(self, request, *args, **kwargs):
+#         form = UserCreateForm(data=request.POST)
+#         if form.is_valid():
+#             form.save()
+#             #フォームから'username'を読み取る
+#             username = form.cleaned_data.get('username')
+#             #フォームから'password1'を読み取る
+#             password = form.cleaned_data.get('password1')
+#             user = authenticate(username=username, password=password)
+#             login(request, user)
+#             return redirect('/')
+#         return render(request, 'basic/sign_up.html', {'form': form,})
+
+#     def get(self, request, *args, **kwargs):
+#         form = UserCreateForm(request.POST)
+#         return  render(request, 'basic/sign_up.html', {'form': form,})
+
+# create_account = Create_account.as_view()

@@ -21,7 +21,7 @@
     <h1>会員登録</h1>
     <div align="center">
         <table border="0">
-            <form action="login.html" method="get">
+            <!-- <form action="login.html" method="get">
                 <tr>
                     <td>
                         <input type="text" name="user_id" placeholder="お名前を入力してください" size="24">
@@ -46,11 +46,25 @@
                     <td colspan="2">
                         <input type="submit" value="報告する" class="button">
                     </td>
-                </tr>
+                </tr> -->
+            <!-- </form> -->
+            <form method="POST" action="{% url 'basicapp:sign_up' %}">
+                {% csrf_token %}
+                <label>メールアドレス</label>
+                {{ form.username }}
+                {{ form.username.errors }}
+                <label>パスワード</label>
+                {{ form.password1 }}
+                <!-- {{ form.password1.errors }} -->
+                <label>パスワード(確認)</label>
+                {{ form.password2 }}
+                {{ form.password2.errors }}
+                <button type="submit">登録</button>
             </form>
         </table>
     </div>
 </body>
+
 </html>
 
 {% endblock %}
