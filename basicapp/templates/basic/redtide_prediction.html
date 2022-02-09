@@ -21,14 +21,23 @@
     <header>
         <div class="menu">
             <ul>
-                <li><a href="{% url 'basicapp:index' %}">トップページへ戻る</a></li>
-                <li>エリアを選択</li>
+                <li style="margin-top: 40px; margin-right: 75px;"><a href="{% url 'basicapp:index' %}">トップページへ戻る</a></li>
+
+                {% csrf_token %}
+
+                <form action="ans/" method="post" style="margin-top: 30px; margin-left: 55px;">{% csrf_token %}
+                    <input type="date" name="date" id="date">
+                    <select name="area" id="area" style="margin-left: 20px;">
+                        <option value="tokyo" name='tokyo'>東京湾</option>
+                        <!-- <option value="osaka" name="osaka">大阪湾</option> -->
+                    </select>
+                    <input type="submit" value="決定">
+                </form>
             </ul>
         </div>
     </header>
 
-    <p>テスト</p>
-    <p>テスト</p>
+    <img src="{% static 'assets/img/image0.png' %}" alt="" width="700" height="300" style="margin-top: 150px; margin-left: 100px;">
 </body>
 </html>
 

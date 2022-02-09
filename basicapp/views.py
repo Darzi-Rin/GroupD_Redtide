@@ -3,6 +3,8 @@ import logging
 from django.views import generic
 from django.urls import reverse_lazy
 
+from basicapp.prediction_AI import yosoku
+
 # Create your views here.
 logger = logging.getLogger(__name__)
 
@@ -34,6 +36,8 @@ class RedtideObserveView(generic.TemplateView):
 
 class RedtidePredictionView(generic.TemplateView):
     template_name = "basic/redtide_prediction.html"
+def ans(request):
+        return yosoku(request)
 
 class RedtideReportView(generic.TemplateView):
     template_name = "basic/redtide_report.html"

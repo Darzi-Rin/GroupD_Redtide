@@ -16,4 +16,5 @@ urlpatterns = [
     path('share_place/', views.SharePlaceView.as_view(), name="share_place"),
     path('share_mail/', views.ShareMailView.as_view(), name="share_mail"),
     path('sign_up/', views.SignUpView.as_view(), name="sign_up"),
+    path('redtide_prediction/ans/', views.ans, name="redtide_prediction_ans"),
 ]

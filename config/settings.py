@@ -179,3 +179,8 @@ LOGGING = {
         },
     }
 }
+
+MODEL_PATH = os.path.join(BASE_DIR, 'akasio_yosoku_model.h5')
+
+AI_IMG =os.path.join(BASE_DIR,'static/img_ai')
+TOKYO_IMG =os.path.join(BASE_DIR,'static/img_tokyo')
