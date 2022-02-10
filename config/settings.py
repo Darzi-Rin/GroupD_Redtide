@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'allauth.account',
 ]
 
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -124,83 +126,29 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# ここからカスタマイズ
 STATICFILES_DIRS = (
-
     os.path.join(BASE_DIR,'static'),
-
 )
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+EMAIL_BACKND = 'django.core.mail.backends.console.EmailBackend'
 
-# django-allauthで利用するdjango.contrib.sitesを使うためにサイト識別IDを設定
-SITE_ID = 1
-
-AUTHENTICATION_BACKENDS = (
-    'allauth.account.auth_backends.AuthenticationBackend',
-# 一般ユーザー用(メールアドレス認証)
-    'django.contrib.auth.backends.ModelBackend',
-# 管理サイト用(ユーザー名認証)
-)
-
-# メールアドレス認証に変更する設定
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_USERNAME_REQUIRED = False
-
-# サインアップにメールアドレス確認をはさむよう設定
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_EMAIL_REQUIRED = True
-
-LOGIN_REDIRECT_URL = 'basicapp:index'
-ACCOUNT_LOGUOUT_REDIRECT_URL = 'account_login'
-
-ACCOUNT_LOGOUT_ON_GET = True
-
-ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
-
-ACCOUNT_FROM_EMAIL = 'admin@example.com'
-
-# MEDIA設定
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-MEDIA_URL = '/media/'
-
-#ロギング設定
-LOGGING = {
-    'version':1, #1固定
-    'disable_existing_loggers':False,
-
-    #ロガーの設定
-    'loggers':{
-        #Djangoが使用するロガー
-        'django':{
-            'handlers':['console'],
-            'level':'INFO',
-        },
-        #basicappアプリケーションが利用するロガー
-        'basicapp':{
-            'handlers':['console'],
-            'level':'DEBUG',
-        },
-    },
-    #ハンドラの設定
-    'handlers':{
-        'console':{
-            'level':'DEBUG',
-            'class':'logging.StreamHandler',
-            'formatter':'dev'
-        },
-    },
-    #フォーマッタの設定
-    'formatters':{
-        'dev':{
-            'format':'\t'.join([
-                '%(asctime)s',
-                '[%(levelname)s]',
-                '%(pathname)s(Line:%(lineno)d)',
-                '%(message)s',
-            ])
-        },
-    }
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'alert alert-danger',
+    messages.WARNING: 'alert alert-warning',
+    messages.SUCCESS: 'alert alert-success',
+    messages.INFO: 'alertalert-info',
 }
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+# django-allauthで利用するdjango.contrib.sitesを使うためにサイト識別IDを設定
+SITE_ID = 1
+AUTHENTICATION_BACKENDS = (
+    'allauth.account.auth_backends.AuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_REQUIRED = True
