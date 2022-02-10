@@ -13,6 +13,9 @@ import numpy as np
 from keras.models import load_model
 
 import glob
+import os
+#import pandas as pd
+#from config.settings import BASE_DIR
 
 #from config.settings import BASE_DIR
 from config.settings import MODEL_PATH
@@ -32,25 +35,36 @@ def yosoku(request):
     model = load_model(MODEL_PATH, compile=False)
 
     
-    date=request.POST['date']
+    #date=request.POST['date']
     area=request.POST['area']
 
-    if date== '':
+    #if date== '':
         #日付が選択されなかった時
-        return render (request,'basic/redtide_prediction_ans.html',{'yosoku':"日付を選択してください。"})
-    else:
+    #    return render (request,'basic/redtide_prediction_ans.html',{'yosoku':"日付を選択してください。"})
+    #else:
         #formで受け取ったareaとdateでファイル名検索
-        search_img=glob.glob('{}/{}/{}.png'.format(AI_IMG,area,date))
-        search_img2=glob.glob('{}/{}/{}.png'.format(TOKYO_IMG,area,date))
-        if search_img == []:
-            #画像がなかった場合
-            return render (request,'basic/redtide_prediction_result.html',{'yosoku':"画像がありません。"})
-        else:
-            #リストから抽出
-            img_name=search_img[0]
-            
-            imgs1=search_img2[0]
-            imgs_change=imgs1[41:]
+    
+    # for f in glob.glob('{}/{}/*.png'.format(AI_IMG,area)):
+    #     imgs_date = os.path.splitext(os.path.basename(f))[0]
+    # df = pd.imgs_date
+    # latest_date = imgs_date.sort_values("datatime").tail(1)
+
+    # list_of_files = glob.glob('{}/{}/*'.format(AI_IMG,area))
+    # latest_date = max(list_of_files, key=os.path.getctime)
+
+    
+
+    search_img=glob.glob('{}/{}/{}.png'.format(AI_IMG,area,latest_date))
+    search_img2=glob.glob('{}/{}/{}.png'.format(TOKYO_IMG,area,latest_date))
+    if search_img == []:
+        #画像がなかった場合
+        return render (request,'basic/redtide_prediction_result.html',{'yosoku':"画像がありません。"})
+    else:
+        #リストから抽出
+        img_name=search_img[0]
+
+        imgs1=search_img2[0]
+        imgs_change=imgs1[41:]
 
 
     categories = ["None", "True"]
