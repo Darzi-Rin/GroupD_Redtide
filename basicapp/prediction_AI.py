@@ -14,6 +14,7 @@ from keras.models import load_model
 
 import glob
 import os
+import datetime
 #import pandas as pd
 #from config.settings import BASE_DIR
 
@@ -44,15 +45,16 @@ def yosoku(request):
     #else:
         #formで受け取ったareaとdateでファイル名検索
     
-    # for f in glob.glob('{}/{}/*.png'.format(AI_IMG,area)):
-    #     imgs_date = os.path.splitext(os.path.basename(f))[0]
+    latest_date = ''
+    for f in glob.glob('{}/{}/*.png'.format(AI_IMG,area)):
+        imgs_date = os.path.splitext(os.path.basename(f))[0]
+        # if string_to_datetime(imgs_date[f]) < string_to_datetime(imgs_date[f-1]):
+
     # df = pd.imgs_date
     # latest_date = imgs_date.sort_values("datatime").tail(1)
 
     # list_of_files = glob.glob('{}/{}/*'.format(AI_IMG,area))
     # latest_date = max(list_of_files, key=os.path.getctime)
-
-    
 
     search_img=glob.glob('{}/{}/{}.png'.format(AI_IMG,area,latest_date))
     search_img2=glob.glob('{}/{}/{}.png'.format(TOKYO_IMG,area,latest_date))
