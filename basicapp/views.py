@@ -1,7 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 import logging
 from django.views import generic
 from django.urls import reverse_lazy
+from django.contrib.auth import login, authenticate
+
+from basicapp.forms import LoginForm
+
+
 
 # Create your views here.
 logger = logging.getLogger(__name__)
@@ -14,10 +19,13 @@ class IndexView(generic.TemplateView):
 class InquiryView(generic.TemplateView):
     template_name = "basic/inquiry.html"
 
-
+# class LoginView(generic.TemplateView):
+#     template_name = "basic/login.html"
 
 class LoginView(generic.TemplateView):
     template_name = "basic/login.html"
+    form_class = LoginForm
+    success_url = reverse_lazy("basicapp:index")
 
 class LogoutView(generic.TemplateView):
     template_name = "basic/logout.html"

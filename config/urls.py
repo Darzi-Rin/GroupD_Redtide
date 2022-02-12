@@ -24,5 +24,4 @@ urlpatterns = [
     path('', include('basicapp.urls')),
     #path('basic/', include('basicapp.urls')),
     # ※同じものは書かない
-    path('accounts/',include('allauth.urls')),
 ]

@@ -28,6 +28,15 @@
 <!-- ハンバーガーメニュー -->
 <script type="text/javascript" src="{% static 'js/redtide.js' %}"></script>
 <!-- <script type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script> -->
+<div class="account">
+  {% if user.is_authenticated %}
+  <a href="{% url 'basicapp:logout' %}" class="login login--orange">ログアウト</a>
+  {% else %}
+  <a href="{% url 'basicapp:sign_up' %}" class="login login--orange">会員登録</a>
+  <a href="{% url 'basicapp:login' %}"   class="login login--orange">ログイン</a>
+  {% endif %}
+</div>
+
 <div id="nav-wrapper" class="nav-wrapper">
     <div class="hamburger" id="js-hamburger">
         <span class="hamburger__line hamburger__line--1"></span>

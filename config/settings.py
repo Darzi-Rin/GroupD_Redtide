@@ -8,7 +8,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from telnetlib import AUTHENTICATION
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,14 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'basicapp.apps.BasicappConfig',
-    'accounts.apps.AccountsConfig',
 
     'django.contrib.sites',
     'allauth',
     'allauth.account',
 ]
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -126,29 +122,66 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# ここからカスタマイズ
 STATICFILES_DIRS = (
+
     os.path.join(BASE_DIR,'static'),
+
 )
 
-EMAIL_BACKND = 'django.core.mail.backends.console.EmailBackend'
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-from django.contrib.messages import constants as messages
-MESSAGE_TAGS = {
-    messages.ERROR: 'alert alert-danger',
-    messages.WARNING: 'alert alert-warning',
-    messages.SUCCESS: 'alert alert-success',
-    messages.INFO: 'alertalert-info',
-}
-
-AUTH_USER_MODEL = 'accounts.CustomUser'
 # django-allauthで利用するdjango.contrib.sitesを使うためにサイト識別IDを設定
 SITE_ID = 1
-AUTHENTICATION_BACKENDS = (
-    'allauth.account.auth_backends.AuthenticationBackend',
-    'django.contrib.auth.backends.ModelBackend',
-)
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_EMAIL_REQUIRED = True
+
+# MEDIA設定
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
+
+#ロギング設定
+LOGGING = {
+    'version':1, #1固定
+    'disable_existing_loggers':False,
+
+    #ロガーの設定
+    'loggers':{
+        #Djangoが使用するロガー
+        'django':{
+            'handlers':['console'],
+            'level':'INFO',
+        },
+        #basicappアプリケーションが利用するロガー
+        'basicapp':{
+            'handlers':['console'],
+            'level':'DEBUG',
+        },
+    },
+    #ハンドラの設定
+    'handlers':{
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            'formatter':'dev'
+        },
+    },
+    #フォーマッタの設定
+    'formatters':{
+        'dev':{
+            'format':'\t'.join([
+                '%(asctime)s',
+                '[%(levelname)s]',
+                '%(pathname)s(Line:%(lineno)d)',
+                '%(message)s',
+            ])
+        },
+    }
+}
+
+#判定モデルの追加
+MODEL_FILE_PATH = os.path.join(BASE_DIR, 'akasio_model.h5')
+
+#検証用画像ファイル(img)の追加
+AI_IMG =os.path.join(BASE_DIR,'img')
+
+
+AUTH_USER_MODEL = 'basicapp.CustomUser'
