@@ -3,9 +3,10 @@ import logging
 from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth import login, authenticate
-
-from basicapp.forms import LoginForm
-
+from django.views.generic import CreateView, TemplateView
+from django.views import View
+from django.contrib.auth.models import User
+from . forms import LoginForm
 
 
 # Create your views here.
@@ -22,10 +23,23 @@ class InquiryView(generic.TemplateView):
 # class LoginView(generic.TemplateView):
 #     template_name = "basic/login.html"
 
+#ログイン
 class LoginView(generic.TemplateView):
-    template_name = "basic/login.html"
-    form_class = LoginForm
-    success_url = reverse_lazy("basicapp:index")
+    def post(self, request, *arg, **kwargs):
+        form = LoginForm(data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            user = User.objects.get(username=username)
+            login(request, user)
+            return redirect('/')
+        return render(request, 'basic/login.html', {'form': form,})
+
+    def get(self, request, *args, **kwargs):
+        form = LoginForm(request.POST)
+        return render(request, 'basic/login.html', {'form': form,})
+
+account_login = Account_login.as_view()
+
 
 class LogoutView(generic.TemplateView):
     template_name = "basic/logout.html"
