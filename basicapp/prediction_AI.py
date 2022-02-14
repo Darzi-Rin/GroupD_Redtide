@@ -44,34 +44,31 @@ def yosoku(request):
     #    return render (request,'basic/redtide_prediction_ans.html',{'yosoku':"日付を選択してください。"})
     #else:
         #formで受け取ったareaとdateでファイル名検索
-    
-    latest_date = ''
-    for f in glob.glob('{}/{}/*.png'.format(AI_IMG,area)):
-        imgs_date = os.path.splitext(os.path.basename(f))[0]
-        # if string_to_datetime(imgs_date[f]) < string_to_datetime(imgs_date[f-1]):
 
-    # df = pd.imgs_date
-    # latest_date = imgs_date.sort_values("datatime").tail(1)
+    list_of_files = glob.glob('{}/{}/*'.format(AI_IMG,area))
+    latest_date_full = max(list_of_files, key=os.path.getctime)
+    latest_date = os.path.basename(latest_date_full)
 
-    # list_of_files = glob.glob('{}/{}/*'.format(AI_IMG,area))
-    # latest_date = max(list_of_files, key=os.path.getctime)
+    list_of_files_A = glob.glob('{}/{}/*'.format(TOKYO_IMG,area))
+    latest_date_full_A = max(list_of_files_A, key=os.path.getctime)
+    latest_date_A = os.path.basename(latest_date_full_A)
 
-    search_img=glob.glob('{}/{}/{}.png'.format(AI_IMG,area,latest_date))
-    search_img2=glob.glob('{}/{}/{}.png'.format(TOKYO_IMG,area,latest_date))
-    if search_img == []:
-        #画像がなかった場合
-        return render (request,'basic/redtide_prediction_result.html',{'yosoku':"画像がありません。"})
-    else:
+    search_img=glob.glob('{}/{}/{}'.format(AI_IMG,area,latest_date))
+    search_img2=glob.glob('{}/{}/{}'.format(TOKYO_IMG,area,latest_date_A))
+    # if search_img == []:
+    #     #画像がなかった場合
+    #     return render (request,'basic/redtide_prediction_result.html',{'yosoku':"画像がありません。"})
+    # else:
         #リストから抽出
-        img_name=search_img[0]
+    img_name=search_img[0]
 
-        imgs1=search_img2[0]
-        imgs_change=imgs1[41:]
-
+    imgs1=search_img2[0]
+    imgs_change=imgs1[41:]
 
     categories = ["None", "True"]
     
     img_path = img_name
+    imgs_change = search_img2
 
     img = image.load_img(img_path, target_size=(60, 60, 3))
     x = image.img_to_array(img)
