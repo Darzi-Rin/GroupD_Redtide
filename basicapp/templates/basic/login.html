@@ -23,6 +23,7 @@
     {% endif %}
     <form method="POST" action="{% url 'basicapp:login' %}">
       {% csrf_token %}
+      {{ form }}
       <label>ユーザーID</label>
       {{ form.username }}
       {{ form.username.errors }}

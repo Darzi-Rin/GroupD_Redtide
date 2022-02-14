@@ -1,25 +1,26 @@
-# mainに元からあるモジュール
-from django.shortcuts import render,redirect #qiitaにもある
+from django.shortcuts import render,redirect
 import logging
 from django.views import generic
 from django.urls import reverse_lazy
 
-# sotoをコピペしたもの
-# from django.contrib.auth.models import CustomUser #importエラーの原因
-from django.contrib.auth import login, authenticate # qiitaにもあり
-from django.views.generic import CreateView
+#satoが加えた部分
+# from basicapp.forms import UserCreateForm
+
 # from . forms import UserCreateForm
+from django.contrib.auth import login, authenticate
+# from django.views.generic import CreateView
+#satoが加えた部分
 
-# qiitaのサイトから参考にしたもの
-# from django.contrib.auth.models import User #問題点だと思われるもの
-from django.contrib.auth import get_user_model #代替え案
-# from django.contrib.auth import login, authenticate #すでにsatoあり
-from django.views.generic import CreateView, TemplateView #不明
-
-#追加した理由は不明
+# qiiatkara
 from django.views import View
-# from basicapp.forms import CustomUser #importエラー原因
+# from django.views.generic import CreateView, TemplateView
+# from . forms import UserCreateForm, LoginForm
+# qiitakara
+
+# orizinaru
+from basicapp.forms import LoginForm
 from . forms import LoginForm
+# orzinaru
 
 # Create your views here.
 logger = logging.getLogger(__name__)
@@ -35,23 +36,27 @@ class InquiryView(generic.TemplateView):
 # class LoginView(generic.TemplateView):
 #     template_name = "basic/login.html"
 
-#ログイン
 class LoginView(generic.TemplateView):
-    def post(self, request, *arg, **kwargs):
-        form = LoginForm(data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            user = User.objects.get(username=username)
-            login(request, user)
-            return redirect('/')
-        return render(request, 'basic/login.html', {'form': form,})
+    template_name = "basic/login.html"
+    form_class = LoginForm
+    success_url = reverse_lazy("basicapp:index")
 
-    def get(self, request, *args, **kwargs):
-        form = LoginForm(request.POST)
-        return render(request, 'basic/login.html', {'form': form,})
+# # ログイン
+# class LoginView(View):
+#     def post(self, request, *arg, **kwargs):
+#         form = LoginForm(data=request.POST)
+#         if form.is_valid():
+#             username = form.cleaned_data.get('username')
+#             user = User.objects.get(username=username)
+#             login(request, user)
+#             return redirect('/')
+#         return render(request, 'basic/login.html', {'form': form,})
 
+#     def get(self, request, *args, **kwargs):
+#         form = LoginForm(request.POST)
+#         return render(request, 'basic/login.html', {'form': form,})
 
-# account_login = Account_login.as_view()
+# LoginView = LoginView.as_view()
 
 
 class LogoutView(generic.TemplateView):

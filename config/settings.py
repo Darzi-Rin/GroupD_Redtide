@@ -177,11 +177,4 @@ LOGGING = {
     }
 }
 
-#判定モデルの追加
-MODEL_FILE_PATH = os.path.join(BASE_DIR, 'akasio_model.h5')
-
-#検証用画像ファイル(img)の追加
-AI_IMG =os.path.join(BASE_DIR,'img')
-
-
 AUTH_USER_MODEL = 'basicapp.CustomUser'
