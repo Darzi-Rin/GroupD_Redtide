@@ -3,24 +3,25 @@ import logging
 from django.views import generic
 from django.urls import reverse_lazy
 
-#satoが加えた部分
+# orizinaru
+from basicapp.forms import LoginForm
+from .forms import LoginForm
+# orzinaru
+
+##satoが加えた部分
 # from basicapp.forms import UserCreateForm
 
 # from . forms import UserCreateForm
 from django.contrib.auth import login, authenticate
 # from django.views.generic import CreateView
-#satoが加えた部分
+##satoが加えた部分
 
-# qiiatkara
-from django.views import View
+## qiiatkara
+# from django.views import View
 # from django.views.generic import CreateView, TemplateView
 # from . forms import UserCreateForm, LoginForm
-# qiitakara
+## qiitakara
 
-# orizinaru
-from basicapp.forms import LoginForm
-from . forms import LoginForm
-# orzinaru
 
 # Create your views here.
 logger = logging.getLogger(__name__)
@@ -36,7 +37,7 @@ class InquiryView(generic.TemplateView):
 # class LoginView(generic.TemplateView):
 #     template_name = "basic/login.html"
 
-class LoginView(generic.TemplateView):
+class LoginView(generic.FormView):
     template_name = "basic/login.html"
     form_class = LoginForm
     success_url = reverse_lazy("basicapp:index")
