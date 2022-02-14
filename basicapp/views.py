@@ -1,13 +1,25 @@
-from django.shortcuts import render,redirect
+# mainに元からあるモジュール
+from django.shortcuts import render,redirect #qiitaにもある
 import logging
 from django.views import generic
 from django.urls import reverse_lazy
-from django.contrib.auth import login, authenticate
-from django.views.generic import CreateView, TemplateView
-from django.views import View
-from django.contrib.auth.models import User
-from . forms import LoginForm
 
+# sotoをコピペしたもの
+# from django.contrib.auth.models import CustomUser #importエラーの原因
+from django.contrib.auth import login, authenticate # qiitaにもあり
+from django.views.generic import CreateView
+# from . forms import UserCreateForm
+
+# qiitaのサイトから参考にしたもの
+# from django.contrib.auth.models import User #問題点だと思われるもの
+from django.contrib.auth import get_user_model #代替え案
+# from django.contrib.auth import login, authenticate #すでにsatoあり
+from django.views.generic import CreateView, TemplateView #不明
+
+#追加した理由は不明
+from django.views import View
+# from basicapp.forms import CustomUser #importエラー原因
+from . forms import LoginForm
 
 # Create your views here.
 logger = logging.getLogger(__name__)
@@ -38,7 +50,8 @@ class LoginView(generic.TemplateView):
         form = LoginForm(request.POST)
         return render(request, 'basic/login.html', {'form': form,})
 
-account_login = Account_login.as_view()
+
+# account_login = Account_login.as_view()
 
 
 class LogoutView(generic.TemplateView):
@@ -70,3 +83,18 @@ class ShareMailView(generic.TemplateView):
 
 class SignUpView(generic.TemplateView):
     template_name = "basic/sign_up.html"
+
+
+
+# # 修正前
+# from django.shortcuts import render,redirect 修正後もある
+# import logging　ある
+# from django.views import generic　ある
+# from django.urls import reverse_lazy　ある
+# from django.contrib.auth import login, authenticate　ある
+# from django.views.generic import CreateView, TemplateView　ある
+# from django.views import View　ある
+# from django.contrib.auth.models import User　消してる
+# from . forms import LoginForm　ある
+
+
