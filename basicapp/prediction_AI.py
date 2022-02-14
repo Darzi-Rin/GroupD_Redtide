@@ -37,32 +37,31 @@ def yosoku(request):
     #date=request.POST['date']
     area=request.POST['area']
 
-    #if date== '':
+    if date== '':
         #日付が選択されなかった時
-    #    return render (request,'basic/redtide_prediction_ans.html',{'yosoku':"日付を選択してください。"})
-    #else:
+        return render (request,'basic/redtide_prediction_ans.html',{'yosoku':"日付を選択してください。"})
+    else:
         #formで受け取ったareaとdateでファイル名検索
 
-    list_of_files = glob.glob('{}/{}/*'.format(AI_IMG,area))
-    latest_date_full = max(list_of_files, key=os.path.getctime)
-    latest_date = os.path.basename(latest_date_full)
+        list_of_files = glob.glob('{}/{}/*'.format(AI_IMG,area))
+        latest_date_full = max(list_of_files, key=os.path.getctime)
+        latest_date = os.path.basename(latest_date_full)
 
-    list_of_files_A = glob.glob('{}/{}/*'.format(TOKYO_IMG,area))
-    latest_date_full_A = max(list_of_files_A, key=os.path.getctime)
-    latest_date_A = os.path.basename(latest_date_full_A)
+        list_of_files_A = glob.glob('{}/{}/*'.format(TOKYO_IMG,area))
+        latest_date_full_A = max(list_of_files_A, key=os.path.getctime)
+        latest_date_A = os.path.basename(latest_date_full_A)
 
-    search_img=glob.glob('{}/{}/{}'.format(AI_IMG,area,latest_date))
-    search_img2=glob.glob('{}/{}/{}'.format(TOKYO_IMG,area,latest_date_A))
-    if search_img == []:
-        #画像がなかった場合
-        return render (request,'basic/redtide_prediction_result.html',{'yosoku':"画像がありません。"})
-    else:
-        #リストから抽出
-        img_name=search_img[0]
+        search_img=glob.glob('{}/{}/{}'.format(AI_IMG,area,latest_date))
+        search_img2=glob.glob('{}/{}/{}'.format(TOKYO_IMG,area,latest_date_A))
+        if search_img == []:
+            #画像がなかった場合
+            return render (request,'basic/redtide_prediction_result.html',{'yosoku':"画像がありません。"})
+        else:
+            #リストから抽出
+            img_name=search_img[0]
 
-        imgs1=search_img2[0]
-        imgs_change=imgs1[41:]
-    # imgs_change = imgs1
+            imgs1=search_img2[0]
+            imgs_change=imgs1[41:]
 
     categories = ["None", "True"]
     
