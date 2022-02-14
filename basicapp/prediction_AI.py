@@ -16,9 +16,7 @@ import glob
 import os
 import datetime
 #import pandas as pd
-#from config.settings import BASE_DIR
 
-#from config.settings import BASE_DIR
 from config.settings import MODEL_PATH
 from config.settings import AI_IMG
 from config.settings import TOKYO_IMG
@@ -55,20 +53,22 @@ def yosoku(request):
 
     search_img=glob.glob('{}/{}/{}'.format(AI_IMG,area,latest_date))
     search_img2=glob.glob('{}/{}/{}'.format(TOKYO_IMG,area,latest_date_A))
-    # if search_img == []:
-    #     #画像がなかった場合
-    #     return render (request,'basic/redtide_prediction_result.html',{'yosoku':"画像がありません。"})
-    # else:
+    if search_img == []:
+        #画像がなかった場合
+        return render (request,'basic/redtide_prediction_result.html',{'yosoku':"画像がありません。"})
+    else:
         #リストから抽出
-    img_name=search_img[0]
+        img_name=search_img[0]
 
-    imgs1=search_img2[0]
-    imgs_change=imgs1[41:]
+        imgs1=search_img2[0]
+        imgs_change=imgs1[41:]
+    # imgs_change = imgs1
 
     categories = ["None", "True"]
     
     img_path = img_name
-    imgs_change = search_img2
+    # imgs_change = search_img2
+    # imgs_change = imgs1
 
     img = image.load_img(img_path, target_size=(60, 60, 3))
     x = image.img_to_array(img)
